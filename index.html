@@ -1,960 +1,451 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>حریر | Harir | حریر - لوکس‌ترین مارکت‌پلیس خرید و فروش</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- AOS Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>حریر پلتفرم | خوش آمدید</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* ========== THEME VARIABLES WITH RICH COLORS ========== */
-    :root {
-      --bg-gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --bg-gradient-2: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      --bg-gradient-start: radial-gradient(ellipse at 20% 35%, #ffe6cc, #ffd9b5);
-      --bg-solid: #fff5ec;
-      --card-bg: rgba(255, 255, 255, 0.92);
-      --card-border: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-      --card-shadow: 0 35px 70px rgba(0, 0, 0, 0.12), 0 0 0 1.5px rgba(255, 154, 158, 0.3);
-      --header-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-      --text-primary: #2c241a;
-      --text-secondary: #5a4a36;
-      --text-light: #8b7355;
-      --text-white: #3a2c1c;
-      --btn-gradient: linear-gradient(105deg, #f093fb 0%, #f5576c 100%);
-      --btn-hover: linear-gradient(105deg, #e06dc9, #f43b54);
-      --cat-bg: rgba(255, 245, 235, 0.9);
-      --cat-border: rgba(250, 112, 154, 0.4);
-      --cat-color: #5a3e2a;
-      --card-bg-solid: linear-gradient(145deg, #fff8f0, #fff0e6);
-      --footer-bg: rgba(0, 0, 0, 0.04);
-      --footer-text: #8b765a;
-      --info-bg: rgba(250, 112, 154, 0.08);
-      --info-text: #a05a6e;
-      --motto-bg: rgba(0, 0, 0, 0.08);
-      --lang-bg: rgba(0, 0, 0, 0.04);
-      --lang-btn-bg: rgba(255, 245, 240, 0.95);
-      --lang-border: rgba(250, 112, 154, 0.5);
-      --glow-text: linear-gradient(135deg, #fa709a, #fee140);
-      --stats-bg: linear-gradient(135deg, rgba(255, 245, 235, 0.9), rgba(255, 235, 215, 0.9));
-      --offer-bg: linear-gradient(135deg, rgba(250, 112, 154, 0.12), rgba(254, 225, 64, 0.12));
-      --gold-glow: 0 0 15px rgba(250, 112, 154, 0.4);
-      --gallery-bg: rgba(255, 245, 240, 0.6);
-    }
+        body {
+            font-family: 'Segoe UI', 'Poppins', 'IranSans', system-ui, -apple-system, sans-serif;
+            background: radial-gradient(circle at 20% 30%, #0a0a2a, #03010f);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    body.night-mode {
-      --bg-gradient-start: radial-gradient(ellipse at 20% 35%, #1a1a2e, #16213e);
-      --bg-solid: #0f0f1a;
-      --card-bg: rgba(25, 25, 45, 0.94);
-      --card-border: linear-gradient(135deg, #667eea, #764ba2);
-      --card-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 0 1.5px rgba(102, 126, 234, 0.4);
-      --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --text-primary: #f0e6d8;
-      --text-secondary: #d4c5b0;
-      --text-light: #a8967a;
-      --text-white: #fef3e0;
-      --btn-gradient: linear-gradient(105deg, #667eea, #764ba2);
-      --btn-hover: linear-gradient(105deg, #5a67d8, #6b46c0);
-      --cat-bg: rgba(30, 30, 50, 0.85);
-      --cat-border: rgba(102, 126, 234, 0.4);
-      --cat-color: #e0d0c0;
-      --card-bg-solid: linear-gradient(145deg, #23233a, #1a1a30);
-      --footer-bg: rgba(0, 0, 0, 0.5);
-      --footer-text: #a8967a;
-      --info-bg: rgba(102, 126, 234, 0.15);
-      --info-text: #a8b4e0;
-      --motto-bg: rgba(0, 0, 0, 0.4);
-      --lang-bg: rgba(0, 0, 0, 0.35);
-      --lang-btn-bg: rgba(30, 30, 50, 0.9);
-      --lang-border: rgba(102, 126, 234, 0.5);
-      --glow-text: linear-gradient(135deg, #667eea, #764ba2);
-      --stats-bg: linear-gradient(135deg, rgba(30, 30, 50, 0.8), rgba(20, 20, 40, 0.8));
-      --offer-bg: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
-      --gold-glow: 0 0 15px rgba(102, 126, 234, 0.5);
-      --gallery-bg: rgba(30, 30, 50, 0.6);
-    }
+        /* پس‌زمینه داینامیک با نقاط متحرک */
+        .animated-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
 
-    body {
-      min-height: 100vh;
-      background: var(--bg-gradient-start), var(--bg-solid);
-      font-family: 'Vazirmatn', 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      position: relative;
-      transition: background 0.4s ease;
-    }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out;
+        }
 
-    /* animated gradient particles */
-    body::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle at 15% 30%, rgba(250, 112, 154, 0.12) 2%, transparent 2.5%),
-                        radial-gradient(circle at 85% 70%, rgba(254, 225, 64, 0.1) 1.5%, transparent 2%);
-      background-size: 60px 60px, 75px 75px;
-      animation: floatParticles 20s infinite alternate;
-      pointer-events: none;
-    }
+        .orb1 {
+            width: 400px;
+            height: 400px;
+            background: #8B5FBF;
+            top: -150px;
+            right: -100px;
+            animation-delay: 0s;
+        }
 
-    @keyframes floatParticles {
-      0% { transform: translate(0, 0); opacity: 0.3; }
-      100% { transform: translate(-15px, -10px); opacity: 0.7; }
-    }
+        .orb2 {
+            width: 500px;
+            height: 500px;
+            background: #4a2f7a;
+            bottom: -200px;
+            left: -150px;
+            animation-delay: -5s;
+        }
 
-    /* main card */
-    .harir-premium {
-      max-width: 1080px;
-      width: 100%;
-      background: var(--card-bg);
-      backdrop-filter: blur(22px);
-      border-radius: 3rem;
-      box-shadow: var(--card-shadow);
-      overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      position: relative;
-      z-index: 20;
-      border: 1px solid transparent;
-      background-clip: padding-box;
-    }
+        .orb3 {
+            width: 300px;
+            height: 300px;
+            background: #b77eff;
+            top: 50%;
+            right: 10%;
+            animation-delay: -10s;
+            opacity: 0.3;
+        }
 
-    .harir-premium:hover {
-      transform: translateY(-8px);
-    }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -40px) scale(1.05); }
+            66% { transform: translate(-20px, 30px) scale(0.95); }
+        }
 
-    /* header with gradient */
-    .dynamic-header {
-      background: var(--header-gradient);
-      background-size: 200% 200%;
-      animation: shimmerMove 8s ease infinite;
-      padding: 1.6rem 1.5rem 1.3rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+        /* ذرات در حال حرکت */
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
 
-    @keyframes shimmerMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleMove 15s linear infinite;
+        }
 
-    .dynamic-header::after {
-      content: "✦ ༺ ✦ ༻ ✦";
-      font-size: 2.5rem;
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      right: 0;
-      opacity: 0.15;
-      letter-spacing: 12px;
-      pointer-events: none;
-    }
+        @keyframes particleMove {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
 
-    .header-icons {
-      font-size: 2.3rem;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
-      margin-bottom: 0.4rem;
-    }
+        /* محتوای اصلی */
+        .welcome-container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-    .brand-name {
-      font-size: 2.5rem;
-      font-weight: 900;
-      font-family: 'Vazirmatn', 'Inter', cursive;
-      background: linear-gradient(135deg, #fff8e7, #ffddb0, #fff0d0);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.15);
-      letter-spacing: 1px;
-    }
+        .glass-morph {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(15, 20, 40, 0.45);
+            backdrop-filter: blur(20px);
+            border-radius: 64px;
+            padding: 50px 40px;
+            border: 1px solid rgba(139, 95, 191, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+            transition: transform 0.3s ease;
+        }
 
-    .theme-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1.2rem;
-      background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 50px;
-      padding: 0.35rem 1rem;
-      color: white;
-      cursor: pointer;
-      font-size: 0.7rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      backdrop-filter: blur(8px);
-      transition: 0.2s;
-      z-index: 30;
-      font-weight: 600;
-    }
+        .glass-morph:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 95, 191, 0.7);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6);
+        }
 
-    .theme-toggle:hover {
-      background: rgba(0,0,0,0.6);
-      transform: scale(0.95);
-    }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .motto-lux {
-      font-size: 0.72rem;
-      font-weight: 600;
-      background: var(--motto-bg);
-      backdrop-filter: blur(8px);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 4px 20px;
-      border-radius: 60px;
-      margin-top: 10px;
-      border: 1px solid rgba(255, 215, 130, 0.5);
-      color: var(--text-white);
-    }
+        /* آواتار یا لوگوی بزرگ */
+        .avatar-glow {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #9b6fcf, #5a2d9e);
+            border-radius: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(139, 95, 191, 0.6), 0 15px 25px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
 
-    /* language bar */
-    .lang-bar {
-      display: flex;
-      justify-content: center;
-      gap: 0.9rem;
-      padding: 0.8rem 1.2rem 0.5rem;
-      background: var(--lang-bg);
-      flex-wrap: wrap;
-    }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(139, 95, 191, 0.7); transform: scale(1); }
+            50% { box-shadow: 0 0 0 15px rgba(139, 95, 191, 0.2); transform: scale(1.02); }
+        }
 
-    .lang-btn {
-      background: var(--lang-btn-bg);
-      border: 1px solid var(--lang-border);
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 0.4rem 1.2rem;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: 0.3s;
-      color: var(--text-secondary);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+        .avatar-glow svg {
+            width: 65px;
+            height: 65px;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+        }
 
-    .lang-btn.active {
-      background: linear-gradient(105deg, #fa709a, #fee140);
-      border-color: #fff0b0;
-      color: white;
-      box-shadow: 0 4px 12px rgba(250, 112, 154, 0.45);
-      transform: scale(1.02);
-    }
+        /* عنوان خوش‌آمدگویی */
+        .welcome-badge {
+            background: rgba(139, 95, 191, 0.2);
+            backdrop-filter: blur(8px);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            color: #cdb4ff;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            border: 0.5px solid rgba(139, 95, 191, 0.5);
+        }
 
-    .lang-btn:hover:not(.active) {
-      transform: translateY(-2px);
-      background: rgba(250, 112, 154, 0.2);
-    }
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(120deg, #ffffff, #e0b3ff, #c48aff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
 
-    /* content */
-    .content-area {
-      padding: 1.5rem 1.8rem 1.5rem;
-    }
+        .highlight {
+            color: #c48aff;
+            background: none;
+            background-clip: unset;
+            -webkit-background-clip: unset;
+        }
 
-    /* hero */
-    .hero-section {
-      text-align: center;
-      margin-bottom: 1.2rem;
-    }
+        .greeting-text {
+            font-size: 22px;
+            color: #e2e8ff;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
 
-    .hero-title {
-      font-size: 1.9rem;
-      font-weight: 800;
-      background: var(--glow-text);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.4rem;
-    }
+        .description {
+            color: #a5b1d4;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            font-size: 16px;
+            padding: 0 15px;
+        }
 
-    .hero-subtitle {
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
+        /* دکمه اصلی حریر (لینک ورود) */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(95deg, #8B5FBF, #6a3c9f);
+            border: none;
+            padding: 18px 45px;
+            border-radius: 60px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 10px 25px rgba(107, 70, 163, 0.5);
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 20px;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* stats */
-    .stats-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0 1.2rem;
-    }
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
 
-    .stat-card {
-      background: var(--stats-bg);
-      border-radius: 1.5rem;
-      padding: 0.5rem 1rem;
-      text-align: center;
-      border: 1px solid var(--cat-border);
-      min-width: 80px;
-      transition: all 0.25s;
-      backdrop-filter: blur(4px);
-    }
+        .cta-btn:hover::before {
+            left: 100%;
+        }
 
-    .stat-card:hover {
-      transform: translateY(-4px);
-      border-color: #fa709a;
-      box-shadow: var(--gold-glow);
-    }
+        .cta-btn:hover {
+            transform: scale(1.03);
+            background: linear-gradient(95deg, #a075db, #7d4bb3);
+            box-shadow: 0 18px 35px rgba(107, 70, 163, 0.7);
+        }
 
-    .stat-number {
-      font-size: 1.25rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
 
-    .stat-label {
-      font-size: 0.6rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
+        /* آمار و اطلاعات اضافی */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin: 40px 0 30px;
+            flex-wrap: wrap;
+        }
 
-    /* offer */
-    .offer-banner {
-      background: var(--offer-bg);
-      border-radius: 2rem;
-      padding: 0.5rem 0.8rem;
-      text-align: center;
-      margin: 0.3rem 0 1.2rem;
-      border: 1px dashed rgba(250, 112, 154, 0.5);
-      animation: softPulse 2s infinite;
-    }
+        .stat-item {
+            text-align: center;
+        }
 
-    @keyframes softPulse {
-      0% { opacity: 0.8; }
-      50% { opacity: 1; box-shadow: 0 0 8px rgba(250, 112, 154, 0.3); }
-      100% { opacity: 0.8; }
-    }
+        .stat-number {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #d2b0ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
 
-    .offer-text {
-      font-size: 0.7rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+        .stat-label {
+            font-size: 12px;
+            color: #8f9ac2;
+            margin-top: 5px;
+        }
 
-    /* categories */
-    .categories-section {
-      margin: 1rem 0 1.2rem;
-    }
+        .footer-note {
+            font-size: 13px;
+            color: #6a7199;
+            border-top: 1px solid rgba(139, 95, 191, 0.2);
+            padding-top: 25px;
+            margin-top: 15px;
+        }
 
-    .section-label {
-      text-align: center;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.8rem;
-      letter-spacing: 2px;
-    }
-
-    .cat-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.7rem;
-    }
-
-    .cat-item {
-      background: var(--cat-bg);
-      border-radius: 60px;
-      padding: 0.4rem 1.1rem;
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: var(--cat-color);
-      border: 1px solid var(--cat-border);
-      transition: all 0.25s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cat-item:hover {
-      transform: translateY(-3px);
-      border-color: #fa709a;
-      box-shadow: var(--gold-glow);
-    }
-
-    /* gallery */
-    .gallery-section {
-      margin: 1.2rem 0 1.2rem;
-    }
-
-    .gallery-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      width: calc(25% - 0.75rem);
-      min-width: 105px;
-      background: var(--gallery-bg);
-      border-radius: 1.2rem;
-      overflow: hidden;
-      text-align: center;
-      border: 1px solid var(--cat-border);
-      transition: all 0.35s;
-      cursor: pointer;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-6px) scale(1.02);
-      border-color: #fa709a;
-      box-shadow: var(--gold-glow);
-    }
-
-    .gallery-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s;
-    }
-
-    .gallery-item:hover .gallery-img {
-      transform: scale(1.03);
-    }
-
-    .gallery-title {
-      font-size: 0.6rem;
-      font-weight: 700;
-      color: var(--text-secondary);
-      padding: 0.45rem 0.2rem;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(6px);
-    }
-
-    @media (max-width: 550px) {
-      .gallery-item { width: calc(33.33% - 0.7rem); }
-    }
-
-    /* actions */
-    .actions-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      margin: 1.2rem 0 1rem;
-    }
-
-    .action-card {
-      flex: 1;
-      min-width: 210px;
-      background: var(--card-bg-solid);
-      border-radius: 2rem;
-      padding: 1.2rem 0.8rem;
-      text-align: center;
-      border: 1px solid var(--cat-border);
-      transition: all 0.35s;
-    }
-
-    .action-card:hover {
-      transform: translateY(-6px);
-      border-color: #fa709a;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-
-    .action-icon {
-      font-size: 2rem;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.5rem;
-    }
-
-    .action-title {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 0.7rem;
-    }
-
-    .btn-gold {
-      background: var(--btn-gradient);
-      border: none;
-      padding: 0.55rem 1.3rem;
-      border-radius: 2.5rem;
-      font-weight: 800;
-      color: white;
-      cursor: pointer;
-      transition: 0.25s;
-      font-family: inherit;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .btn-gold:hover {
-      background: var(--btn-hover);
-      transform: scale(0.96);
-    }
-
-    .action-note {
-      margin-top: 0.5rem;
-      font-size: 0.6rem;
-      color: var(--text-light);
-    }
-
-    /* features */
-    .features-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
-      margin: 0.8rem 0;
-    }
-
-    .feature-item {
-      background: var(--stats-bg);
-      border-radius: 1.5rem;
-      padding: 0.3rem 1rem;
-      font-size: 0.65rem;
-      color: var(--text-secondary);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 500;
-    }
-
-    /* trust */
-    .trust-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin: 0.5rem 0;
-    }
-
-    .trust-item {
-      font-size: 0.6rem;
-      color: var(--text-light);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* info */
-    .info-message {
-      margin-top: 1rem;
-      font-size: 0.65rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: var(--info-bg);
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      color: var(--info-text);
-    }
-
-    /* footer */
-    .footer {
-      background: var(--footer-bg);
-      padding: 0.8rem;
-      text-align: center;
-      font-size: 0.6rem;
-      color: var(--footer-text);
-      border-top: 1px solid var(--cat-border);
-    }
-
-    /* RTL */
-    body[dir="rtl"] .theme-toggle {
-      right: auto;
-      left: 1.2rem;
-    }
-
-    body[dir="rtl"] .btn-gold i {
-      transform: scaleX(-1);
-    }
-
-    @media (max-width: 680px) {
-      .actions-section { flex-direction: column; }
-      .brand-name { font-size: 1.9rem; }
-      .hero-title { font-size: 1.5rem; }
-      .content-area { padding: 1.2rem; }
-    }
-  </style>
+        /* ریسپانسیو */
+        @media (max-width: 550px) {
+            .glass-morph {
+                padding: 35px 25px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            .greeting-text {
+                font-size: 18px;
+            }
+            .cta-btn {
+                font-size: 17px;
+                padding: 15px 30px;
+            }
+            .stats {
+                gap: 20px;
+            }
+            .stat-number {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="harir-premium" data-aos="zoom-in" data-aos-duration="700">
-    <div class="dynamic-header">
-      <button class="theme-toggle" id="themeToggleBtn">
-        <i class="fas fa-moon"></i> <span id="themeText">شب</span>
-      </button>
-      <div class="header-icons">
-        <i class="fas fa-crown"></i> <i class="fas fa-gem"></i> <i class="fas fa-rocket"></i> <i class="fas fa-chart-line"></i>
-      </div>
-      <div class="brand-name">حریر | Harir | حریر</div>
-      <div class="motto-lux" id="dynamicTagline">
-        <i class="fas fa-infinity"></i> <span>لوکس‌ترین بازار خرید و فروش</span> <i class="fas fa-infinity"></i>
-      </div>
-    </div>
 
-    <div class="lang-bar">
-      <button class="lang-btn" data-lang="fa"><i class="fas fa-flag"></i> فارسی</button>
-      <button class="lang-btn" data-lang="ps"><i class="fas fa-flag-checkered"></i> پښتو</button>
-      <button class="lang-btn" data-lang="en"><i class="fas fa-globe-americas"></i> English</button>
-    </div>
+<div class="animated-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+</div>
 
-    <div class="content-area">
-      <!-- hero -->
-      <div class="hero-section">
-        <h1 class="hero-title" id="mainGreeting">به حریر خوش آمدید</h1>
-        <p class="hero-subtitle" id="subGreeting">خرید، فروش، معامله — امنیت، کیفیت، اعتماد، لوکس</p>
-      </div>
+<div class="particles" id="particlesContainer"></div>
 
-      <!-- stats -->
-      <div class="stats-grid">
-        <div class="stat-card"><div class="stat-number">۵۰٬۰۰۰+</div><div class="stat-label" id="statUsers">کاربر فعال</div></div>
-        <div class="stat-card"><div class="stat-number">۲۰۰+</div><div class="stat-label" id="statCities">شهر</div></div>
-        <div class="stat-card"><div class="stat-number">۱۰۰٬۰۰۰+</div><div class="stat-label" id="statProducts">محصول</div></div>
-        <div class="stat-card"><div class="stat-number">۲۴/۷</div><div class="stat-label" id="statSupport">پشتیبانی</div></div>
-      </div>
-
-      <!-- offer -->
-      <div class="offer-banner">
-        <div class="offer-text" id="offerText">🎁 ارسال رایگان اولین خرید | تخفیف ویژه اعضای گروه واتساپ 🎁</div>
-      </div>
-
-      <!-- categories -->
-      <div class="categories-section">
-        <div class="section-label" id="categoriesLabel">✨ دسته‌بندی‌های محبوب ✨</div>
-        <div class="cat-grid" id="categoryGrid"></div>
-      </div>
-
-      <!-- gallery with beautiful images -->
-      <div class="gallery-section">
-        <div class="section-label" id="galleryLabel">📸 گالری محصولات ویژه</div>
-        <div class="gallery-grid" id="galleryGrid">
-          <div class="gallery-item">
-            <img class="gallery-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=250&h=250&fit=crop" alt="موبایل" loading="lazy">
-            <div class="gallery-title">موبایل</div>
-          </div>
-          <div class="gallery-item">
-            <img class="gallery-img" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=250&h=250&fit=crop" alt="لباس زنانه" loading="lazy">
-            <div class="gallery-title">لباس زنانه</div>
-          </div>
-          <div class="gallery-item">
-            <img class="gallery-img" src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=250&h=250&fit=crop" alt="لباس مردانه" loading="lazy">
-            <div class="gallery-title">لباس مردانه</div>
-          </div>
-          <div class="gallery-item">
-            <img class="gallery-img" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=250&h=250&fit=crop" alt="جواهرات" loading="lazy">
-            <div class="gallery-title">جواهرات</div>
-          </div>
-          <div class="gallery-item">
-            <img class="gallery-img" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=250&h=250&fit=crop" alt="لپ‌تاپ" loading="lazy">
-            <div class="gallery-title">لپ‌تاپ</div>
-          </div>
-          <div class="gallery-item">
-            <img class="gallery-img" src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=250&h=250&fit=crop" alt="ساعت" loading="lazy">
-            <div class="gallery-title">ساعت</div>
-          </div>
+<div class="welcome-container">
+    <div class="glass-morph">
+        <div class="avatar-glow">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#b07eff"/>
+                <path d="M2 17L12 22L22 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M2 12L12 17L22 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="12" cy="12" r="2" fill="white" stroke="none"/>
+            </svg>
         </div>
-      </div>
-
-      <!-- actions -->
-      <div class="actions-section">
-        <div class="action-card" data-aos="fade-right">
-          <div class="action-icon"><i class="fas fa-store"></i> <i class="fas fa-rocket"></i></div>
-          <div class="action-title" id="platformTitle">پلتفرم حریر</div>
-          <button id="directEnterBtn" class="btn-gold">
-            <i class="fas fa-arrow-right"></i> <span id="enterBtnText">ورود به بازار</span>
-          </button>
-          <div class="action-note" id="platformNote">ضمانت بازگشت کالا • پرداخت امن</div>
+        
+        <div class="welcome-badge">
+            ✨ پلتفرم پیشرفته لایف استریم ✨
         </div>
-
-        <div class="action-card" data-aos="fade-left">
-          <div class="action-icon"><i class="fab fa-whatsapp"></i> <i class="fas fa-users"></i></div>
-          <div class="action-title" id="groupTitle">گروه حریر</div>
-          <button id="whatsappGroupBtn" class="btn-gold">
-            <i class="fab fa-whatsapp"></i> <span id="groupBtnText">ورود به گروه</span>
-          </button>
-          <div class="action-note" id="groupNote">گفتگوی زنده • تخفیف‌های ویژه</div>
+        
+        <h1>
+            به <span class="highlight">حریر</span> خوش آمدید
+        </h1>
+        
+        <div class="greeting-text">
+            🌊 دنیای بدون مرز استریم زنده
         </div>
-      </div>
-
-      <!-- features -->
-      <div class="features-grid">
-        <div class="feature-item"><i class="fas fa-truck"></i> <span>ارسال سریع</span></div>
-        <div class="feature-item"><i class="fas fa-shield-alt"></i> <span>تضمین اصالت</span></div>
-        <div class="feature-item"><i class="fas fa-hand-holding-usd"></i> <span>پرداخت امن</span></div>
-        <div class="feature-item"><i class="fas fa-headset"></i> <span>پشتیبانی ۲۴ ساعته</span></div>
-        <div class="feature-item"><i class="fas fa-undo-alt"></i> <span>بازگشت کالا</span></div>
-      </div>
-
-      <!-- trust -->
-      <div class="trust-grid">
-        <div class="trust-item"><i class="fas fa-lock"></i> <span>SSL امن</span></div>
-        <div class="trust-item"><i class="fas fa-credit-card"></i> <span>درگاه امن</span></div>
-        <div class="trust-item"><i class="fas fa-star"></i> <span>۴.۸/۵ امتیاز</span></div>
-        <div class="trust-item"><i class="fas fa-certificate"></i> <span>نماد اعتماد</span></div>
-      </div>
-
-      <!-- info -->
-      <div class="info-message">
-        <i class="fas fa-star-of-life"></i>
-        <span id="infoSpan">حریر: بزرگترین و لوکس‌ترین بازار آنلاین | تضمین کیفیت | ارسال به سراسر کشور | پشتیبانی ۲۴ ساعته</span>
-      </div>
+        
+        <p class="description">
+            تجربه‌ای نو از پخش زنده با کیفیت 4K، کمترین تأخیر و امکانات حرفه‌ای.<br>
+            همین حالا به جمع استریمرهای حریر بپیوندید.
+        </p>
+        
+        <!-- دکمه ورود به لینک مشخص شده (با کلیک به آدرس لاگین می‌رود) -->
+        <button id="welcomeHarirBtn" class="cta-btn">
+            🎬 شروع کنید &nbsp;→
+        </button>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">۵۰۰+</div>
+                <div class="stat-label">استریمر حرفه‌ای</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">۱۰۰K+</div>
+                <div class="stat-label">کاربر فعال</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">۴K</div>
+                <div class="stat-label">کیفیت Ultra HD</div>
+            </div>
+        </div>
+        
+        <div class="footer-note">
+            🔥 حریر پلتفرم | لحظات زنده را با ما به اشتراک بگذار
+        </div>
     </div>
+</div>
 
-    <div class="footer">
-      <span id="footerCopyright">✨ حریر مارکت | خرید آسان، فروش مطمئن | تجربه لوکس خرید آنلاین ✨</span>
-    </div>
-  </div>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true, duration: 600 });
+<script>
+    // لینک دقیق مورد نظر
+    const TARGET_LOGIN_URL = "https://app-b5ceg4apv8xt.appmedo.com/login";
     
-    const langDict = {
-      fa: {
-        tagline: '<i class="fas fa-infinity"></i> <span>لوکس‌ترین بازار خرید و فروش</span> <i class="fas fa-infinity"></i>',
-        mainGreeting: "به حریر خوش آمدید",
-        subGreeting: "خرید، فروش، معامله — امنیت، کیفیت، اعتماد، لوکس",
-        platformTitle: "پلتفرم حریر",
-        enterBtn: "ورود به بازار",
-        platformNote: "ضمانت بازگشت کالا • پرداخت امن",
-        groupTitle: "گروه حریر",
-        groupBtnText: "ورود به گروه",
-        groupNote: "گفتگوی زنده • تخفیف‌های ویژه",
-        infoText: "حریر: بزرگترین و لوکس‌ترین بازار آنلاین | تضمین کیفیت | ارسال به سراسر کشور | پشتیبانی ۲۴ ساعته",
-        footer: "✨ حریر مارکت | خرید آسان، فروش مطمئن | تجربه لوکس خرید آنلاین ✨",
-        redirectMsg: "در حال انتقال...",
-        offerText: "🎁 ارسال رایگان اولین خرید | تخفیف ویژه اعضای گروه واتساپ 🎁",
-        categoriesLabel: "✨ دسته‌بندی‌های محبوب ✨",
-        galleryLabel: "📸 گالری محصولات ویژه",
-        statUsers: "کاربر فعال",
-        statCities: "شهر",
-        statProducts: "محصول",
-        statSupport: "پشتیبانی",
-        categories: [
-          { icon: "fas fa-mobile-alt", name: "موبایل" },
-          { icon: "fas fa-tshirt", name: "پوشاک" },
-          { icon: "fas fa-laptop-code", name: "گجت" },
-          { icon: "fas fa-home", name: "خانه" },
-          { icon: "fas fa-car", name: "خودرو" },
-          { icon: "fas fa-gem", name: "جواهرات" },
-          { icon: "fas fa-shoe-prints", name: "کفش" }
-        ]
-      },
-      ps: {
-        tagline: '<i class="fas fa-infinity"></i> <span>د پیرود او پلور لوکس بازار</span> <i class="fas fa-infinity"></i>',
-        mainGreeting: "حریر ته ښه راغلاست",
-        subGreeting: "پیرود، پلور، معامله — امنیت، کیفیت، باور، لوکس",
-        platformTitle: "حریر پلیټ فارم",
-        enterBtn: "بازار ته ننوځئ",
-        platformNote: "د توکو بیرته راستنیدو تضمین • خوندي تادیه",
-        groupTitle: "د حریر ګروپ",
-        groupBtnText: "ګروپ ته ننوځئ",
-        groupNote: "ژوندۍ خبرې • ځانګړي تخفیفونه",
-        infoText: "حریر: لوی او لوکس آنلاین بازار | د کیفیت تضمین | ټول هېواد ته لیږد | ۲۴ ساعته ملاتړ",
-        footer: "✨ حریر مارکیټ | اسانه پیرود، باوري پلور | د آنلاین پیرود لوکس تجربه ✨",
-        redirectMsg: "لیږدول کیږی...",
-        offerText: "🎁 د لومړي پیرود لپاره وړیا لیږد | د ګروپ غړو لپاره تخفیف 🎁",
-        categoriesLabel: "✨ مشهور کټګورۍ ✨",
-        galleryLabel: "📸 د ځانګړو محصولاتو ګالری",
-        statUsers: "فعال کارونکی",
-        statCities: "ښار",
-        statProducts: "محصول",
-        statSupport: "ملاتړ",
-        categories: [
-          { icon: "fas fa-mobile-alt", name: "ګرځنده" },
-          { icon: "fas fa-tshirt", name: "جامې" },
-          { icon: "fas fa-laptop-code", name: "ګیجټ" },
-          { icon: "fas fa-home", name: "کور" },
-          { icon: "fas fa-car", name: "موټر" },
-          { icon: "fas fa-gem", name: "ګاڼې" },
-          { icon: "fas fa-shoe-prints", name: "بوټ" }
-        ]
-      },
-      en: {
-        tagline: '<i class="fas fa-infinity"></i> <span>Luxury Marketplace</span> <i class="fas fa-infinity"></i>',
-        mainGreeting: "Welcome to Harir",
-        subGreeting: "Buy, Sell, Trade — Security, Quality, Trust, Luxury",
-        platformTitle: "Harir Platform",
-        enterBtn: "Enter Market",
-        platformNote: "Money-back Guarantee • Secure Payment",
-        groupTitle: "Harir Group",
-        groupBtnText: "Join Group",
-        groupNote: "Live chat • Exclusive discounts",
-        infoText: "Harir: Largest & Luxury online marketplace | Quality guarantee | Nationwide shipping | 24/7 Support",
-        footer: "✨ Harir Market | Easy buying, trusted selling | Luxury online shopping experience ✨",
-        redirectMsg: "Redirecting...",
-        offerText: "🎁 Free shipping on first purchase | Special group discount 🎁",
-        categoriesLabel: "✨ Popular Categories ✨",
-        galleryLabel: "📸 Special Products Gallery",
-        statUsers: "Active Users",
-        statCities: "Cities",
-        statProducts: "Products",
-        statSupport: "Support",
-        categories: [
-          { icon: "fas fa-mobile-alt", name: "Mobile" },
-          { icon: "fas fa-tshirt", name: "Fashion" },
-          { icon: "fas fa-laptop-code", name: "Gadget" },
-          { icon: "fas fa-home", name: "Home" },
-          { icon: "fas fa-car", name: "Car" },
-          { icon: "fas fa-gem", name: "Jewelry" },
-          { icon: "fas fa-shoe-prints", name: "Shoes" }
-        ]
-      }
-    };
-
-    let currentLang = 'fa';
-    let isNightMode = false;
-    const WHATSAPP_LINK = "https://chat.whatsapp.com/JFdc1kdRRpdGO6lj3mO6r4?mode=gi_t";
-    const PLATFORM_LINK = "https://app-amxnw7dzod8h.appmedo.com/";
-
-    const categoryContainer = document.getElementById('categoryGrid');
-    const dynamicTagline = document.getElementById('dynamicTagline');
-    const mainGreeting = document.getElementById('mainGreeting');
-    const subGreeting = document.getElementById('subGreeting');
-    const platformTitleSpan = document.getElementById('platformTitle');
-    const enterBtnSpan = document.getElementById('enterBtnText');
-    const platformNoteSpan = document.querySelector('#platformNote');
-    const groupTitleSpan = document.getElementById('groupTitle');
-    const groupBtnSpan = document.getElementById('groupBtnText');
-    const groupNoteSpan = document.querySelector('#groupNote');
-    const infoSpan = document.getElementById('infoSpan');
-    const footerSpan = document.getElementById('footerCopyright');
-    const offerTextSpan = document.getElementById('offerText');
-    const categoriesLabelSpan = document.getElementById('categoriesLabel');
-    const galleryLabelSpan = document.getElementById('galleryLabel');
-    const statUsersSpan = document.getElementById('statUsers');
-    const statCitiesSpan = document.getElementById('statCities');
-    const statProductsSpan = document.getElementById('statProducts');
-    const statSupportSpan = document.getElementById('statSupport');
-    const directEnterBtn = document.getElementById('directEnterBtn');
-    const whatsappBtn = document.getElementById('whatsappGroupBtn');
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
-    const themeTextSpan = document.getElementById('themeText');
-
-    function renderCategories(lang) {
-      const cats = langDict[lang].categories;
-      categoryContainer.innerHTML = '';
-      cats.forEach(cat => {
-        const chip = document.createElement('div');
-        chip.className = 'cat-item';
-        chip.innerHTML = `<i class="${cat.icon}"></i> <span>${cat.name}</span>`;
-        categoryContainer.appendChild(chip);
-      });
-    }
-
-    function updateUI(lang) {
-      const dict = langDict[lang];
-      if (!dict) return;
-      dynamicTagline.innerHTML = dict.tagline;
-      mainGreeting.innerText = dict.mainGreeting;
-      subGreeting.innerText = dict.subGreeting;
-      platformTitleSpan.innerText = dict.platformTitle;
-      enterBtnSpan.innerText = dict.enterBtn;
-      platformNoteSpan.innerHTML = `<i class="fas fa-shield-alt"></i> ${dict.platformNote}`;
-      groupTitleSpan.innerText = dict.groupTitle;
-      groupBtnSpan.innerText = dict.groupBtnText;
-      groupNoteSpan.innerHTML = `<i class="fas fa-comment-dots"></i> ${dict.groupNote}`;
-      infoSpan.innerText = dict.infoText;
-      footerSpan.innerText = dict.footer;
-      offerTextSpan.innerText = dict.offerText;
-      categoriesLabelSpan.innerText = dict.categoriesLabel;
-      galleryLabelSpan.innerText = dict.galleryLabel;
-      statUsersSpan.innerText = dict.statUsers;
-      statCitiesSpan.innerText = dict.statCities;
-      statProductsSpan.innerText = dict.statProducts;
-      statSupportSpan.innerText = dict.statSupport;
-      renderCategories(lang);
-      
-      const body = document.body;
-      if (lang === 'fa' || lang === 'ps') {
-        body.setAttribute('dir', 'rtl');
-      } else {
-        body.setAttribute('dir', 'ltr');
-      }
-      
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
-        else btn.classList.remove('active');
-      });
-    }
-
-    function toggleTheme() {
-      isNightMode = !isNightMode;
-      if (isNightMode) {
-        document.body.classList.add('night-mode');
-        themeTextSpan.innerText = (currentLang === 'fa' ? 'روز' : (currentLang === 'ps' ? 'ورځ' : 'Day'));
-        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>' + themeTextSpan.innerText + '</span>';
-      } else {
-        document.body.classList.remove('night-mode');
-        themeTextSpan.innerText = (currentLang === 'fa' ? 'شب' : (currentLang === 'ps' ? 'شپه' : 'Night'));
-        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span>' + themeTextSpan.innerText + '</span>';
-      }
-    }
-
-    function redirectToPlatform() {
-      const dict = langDict[currentLang];
-      enterBtnSpan.innerText = dict.redirectMsg;
-      directEnterBtn.disabled = true;
-      directEnterBtn.style.opacity = '0.7';
-      setTimeout(() => { window.location.href = PLATFORM_LINK; }, 400);
-    }
-
-    function directWhatsAppJoin() {
-      window.open(WHATSAPP_LINK, '_blank');
-    }
-
-    function bindEvents() {
-      directEnterBtn.addEventListener('click', redirectToPlatform);
-      whatsappBtn.addEventListener('click', directWhatsAppJoin);
-      themeToggleBtn.addEventListener('click', toggleTheme);
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const langCode = btn.getAttribute('data-lang');
-          if (langCode === currentLang) return;
-          currentLang = langCode;
-          updateUI(currentLang);
-          directEnterBtn.disabled = false;
-          directEnterBtn.style.opacity = '1';
-          if (isNightMode) {
-            themeTextSpan.innerText = (currentLang === 'fa' ? 'روز' : (currentLang === 'ps' ? 'ورځ' : 'Day'));
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span>' + themeTextSpan.innerText + '</span>';
-          } else {
-            themeTextSpan.innerText = (currentLang === 'fa' ? 'شب' : (currentLang === 'ps' ? 'شپه' : 'Night'));
-            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span>' + themeTextSpan.innerText + '</span>';
-          }
+    // رخداد کلیک برای دکمه خوش‌آمدگویی
+    const ctaButton = document.getElementById("welcomeHarirBtn");
+    if(ctaButton) {
+        ctaButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            // افکت کوچک برای بازخورد بهتر
+            ctaButton.style.transform = "scale(0.98)";
+            setTimeout(() => {
+                ctaButton.style.transform = "";
+            }, 120);
+            
+            // هدایت به لینک ورود (تب جدید - مناسب برای لایف استریم)
+            window.open(TARGET_LOGIN_URL, "_blank");
+            
+            // نمایش یک پیام خوش‌آمدگویی کوتاه در کنسول (اختیاری)
+            console.log("✅ هدایت به درگاه ورود حریر: " + TARGET_LOGIN_URL);
+            
+            // اضافه کردن ریپل افکت (اختیاری)
+            const ripple = document.createElement("span");
+            ripple.style.position = "absolute";
+            ripple.style.borderRadius = "50%";
+            ripple.style.backgroundColor = "rgba(255,255,255,0.5)";
+            ripple.style.width = "100px";
+            ripple.style.height = "100px";
+            ripple.style.transform = "translate(-50%, -50%) scale(0)";
+            ripple.style.transition = "transform 0.4s ease-out";
+            ripple.style.pointerEvents = "none";
+            const rect = ctaButton.getBoundingClientRect();
+            ripple.style.left = (rect.left + rect.width/2) + "px";
+            ripple.style.top = (rect.top + rect.height/2) + "px";
+            document.body.appendChild(ripple);
+            setTimeout(() => {
+                ripple.style.transform = "translate(-50%, -50%) scale(4)";
+                ripple.style.opacity = "0";
+                setTimeout(() => ripple.remove(), 500);
+            }, 10);
         });
-      });
     }
-
-    updateUI('fa');
-    bindEvents();
-  </script>
+    
+    // ایجاد ذرات متحرک (particles) برای جلوه بیشتر
+    function createParticles() {
+        const container = document.getElementById("particlesContainer");
+        const particleCount = 65;
+        for(let i = 0; i < particleCount; i++) {
+            const particle = document.createElement("div");
+            particle.classList.add("particle");
+            const size = Math.random() * 6 + 2;
+            particle.style.width = size + "px";
+            particle.style.height = size + "px";
+            particle.style.left = Math.random() * 100 + "%";
+            particle.style.animationDuration = Math.random() * 12 + 8 + "s";
+            particle.style.animationDelay = Math.random() * 10 + "s";
+            particle.style.opacity = Math.random() * 0.5 + 0.2;
+            container.appendChild(particle);
+        }
+    }
+    createParticles();
+    
+    // افکت تایپ لوکیشن (برای زیبایی لوگو)
+    console.log("✨ صفحه خوش‌آمدگویی حریر | مدرن و روان | لینک ورود فعال شد");
+</script>
 </body>
 </html>
