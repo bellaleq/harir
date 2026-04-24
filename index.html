@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>حریر پلتفرم | خوش آمدید</title>
+    <title>فروشگاه بزرگ حریر | لایف استریم و خرید آنلاین</title>
     <style>
         * {
             margin: 0;
@@ -12,440 +12,555 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Poppins', 'IranSans', system-ui, -apple-system, sans-serif;
-            background: radial-gradient(circle at 20% 30%, #0a0a2a, #03010f);
-            min-height: 100vh;
+            font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+            background: linear-gradient(145deg, #0c0a1f 0%, #05030f 100%);
+            color: #f0f0ff;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* پس‌زمینه داینامیک با نقاط متحرک */
-        .animated-bg {
-            position: fixed;
-            width: 100%;
-            height: 100%;
+        /* هدر ثابت با نوار جستجو و آیکون‌ها */
+        .main-header {
+            position: sticky;
             top: 0;
-            left: 0;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .orb1 {
-            width: 400px;
-            height: 400px;
-            background: #8B5FBF;
-            top: -150px;
-            right: -100px;
-            animation-delay: 0s;
-        }
-
-        .orb2 {
-            width: 500px;
-            height: 500px;
-            background: #4a2f7a;
-            bottom: -200px;
-            left: -150px;
-            animation-delay: -5s;
-        }
-
-        .orb3 {
-            width: 300px;
-            height: 300px;
-            background: #b77eff;
-            top: 50%;
-            right: 10%;
-            animation-delay: -10s;
-            opacity: 0.3;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -40px) scale(1.05); }
-            66% { transform: translate(-20px, 30px) scale(0.95); }
-        }
-
-        /* ذرات در حال حرکت */
-        .particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: particleMove 15s linear infinite;
-        }
-
-        @keyframes particleMove {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.6; }
-            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* محتوای اصلی */
-        .welcome-container {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .glass-morph {
-            max-width: 650px;
-            width: 100%;
-            background: rgba(15, 20, 40, 0.45);
+            background: rgba(10, 8, 25, 0.85);
             backdrop-filter: blur(20px);
-            border-radius: 64px;
-            padding: 50px 40px;
-            border: 1px solid rgba(139, 95, 191, 0.4);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(255, 255, 255, 0.05);
-            text-align: center;
-            animation: fadeInUp 0.8s ease-out;
-            transition: transform 0.3s ease;
+            border-bottom: 1px solid rgba(139, 95, 191, 0.3);
+            padding: 16px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            z-index: 100;
         }
 
-        .glass-morph:hover {
-            transform: translateY(-5px);
-            border-color: rgba(139, 95, 191, 0.7);
-            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6);
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* آواتار یا لوگوی بزرگ */
-        .avatar-glow {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 25px;
+        .logo-icon {
             background: linear-gradient(135deg, #9b6fcf, #5a2d9e);
-            border-radius: 45px;
+            width: 45px;
+            height: 45px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 30px rgba(139, 95, 191, 0.6), 0 15px 25px rgba(0, 0, 0, 0.3);
-            animation: pulse 2s infinite;
+            font-size: 26px;
         }
 
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(139, 95, 191, 0.7); transform: scale(1); }
-            50% { box-shadow: 0 0 0 15px rgba(139, 95, 191, 0.2); transform: scale(1.02); }
-        }
-
-        .avatar-glow svg {
-            width: 65px;
-            height: 65px;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
-        }
-
-        /* عنوان خوش‌آمدگویی */
-        .welcome-badge {
-            background: rgba(139, 95, 191, 0.2);
-            backdrop-filter: blur(8px);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-size: 14px;
-            color: #cdb4ff;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            border: 0.5px solid rgba(139, 95, 191, 0.5);
-        }
-
-        h1 {
-            font-size: 48px;
+        .logo-text {
+            font-size: 26px;
             font-weight: 800;
-            background: linear-gradient(120deg, #ffffff, #e0b3ff, #c48aff);
+            background: linear-gradient(120deg, #fff, #cdb4ff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
         }
 
-        .highlight {
-            color: #c48aff;
-            background: none;
-            background-clip: unset;
-            -webkit-background-clip: unset;
-        }
-
-        .greeting-text {
-            font-size: 22px;
-            color: #e2e8ff;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .description {
-            color: #a5b1d4;
-            line-height: 1.7;
-            margin-bottom: 35px;
-            font-size: 16px;
-            padding: 0 15px;
-        }
-
-        /* دکمه اصلی حریر (لینک ورود) */
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            background: linear-gradient(95deg, #8B5FBF, #6a3c9f);
-            border: none;
-            padding: 18px 45px;
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 60px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 10px 25px rgba(107, 70, 163, 0.5);
-            width: 100%;
-            max-width: 320px;
-            margin: 0 auto 20px;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .cta-btn:hover::before {
-            left: 100%;
-        }
-
-        .cta-btn:hover {
-            transform: scale(1.03);
-            background: linear-gradient(95deg, #a075db, #7d4bb3);
-            box-shadow: 0 18px 35px rgba(107, 70, 163, 0.7);
-        }
-
-        .cta-btn:active {
-            transform: scale(0.98);
-        }
-
-        /* آمار و اطلاعات اضافی */
-        .stats {
+            padding: 8px 20px;
             display: flex;
-            justify-content: center;
-            gap: 35px;
-            margin: 40px 0 30px;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(139, 95, 191, 0.4);
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 100%;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 22px;
+        }
+
+        .nav-icons span {
+            cursor: pointer;
+            font-size: 22px;
+            transition: 0.2s;
+        }
+
+        .nav-icons span:hover {
+            color: #c48aff;
+            transform: scale(1.05);
+        }
+
+        /* بخش اصلی دو ستونه (لایف استریم + فروشگاه) */
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 25px;
+            gap: 30px;
+        }
+
+        /* بخش چپ : پخش زنده لایف استریم */
+        .live-section {
+            flex: 1.4;
+            min-width: 280px;
+            background: rgba(20, 18, 40, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 48px;
+            padding: 20px;
+            border: 1px solid rgba(139, 95, 191, 0.3);
+        }
+
+        .live-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
-        .stat-item {
+        .live-badge {
+            background: #ff3366;
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulseRed 1.5s infinite;
+        }
+
+        @keyframes pulseRed {
+            0% { box-shadow: 0 0 0 0 #ff336680; }
+            100% { box-shadow: 0 0 0 8px transparent; }
+        }
+
+        .live-video {
+            background: #000000aa;
+            border-radius: 32px;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            background-image: radial-gradient(circle at 30% 40%, #2a1e4a, #0a0820);
+            border: 1px solid #9b6fcf66;
+        }
+
+        .mock-player {
             text-align: center;
         }
 
-        .stat-number {
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff, #d2b0ff);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+        .mock-player span {
+            font-size: 60px;
+            display: block;
         }
 
-        .stat-label {
-            font-size: 12px;
-            color: #8f9ac2;
-            margin-top: 5px;
+        .btn-live-action {
+            background: linear-gradient(95deg, #8B5FBF, #6a3c9f);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 40px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 12px;
         }
 
-        .footer-note {
-            font-size: 13px;
-            color: #6a7199;
-            border-top: 1px solid rgba(139, 95, 191, 0.2);
-            padding-top: 25px;
+        .chat-box {
+            background: #0f0d1fcc;
+            border-radius: 28px;
+            padding: 15px;
+            height: 220px;
+            overflow-y: auto;
             margin-top: 15px;
         }
 
-        /* ریسپانسیو */
-        @media (max-width: 550px) {
-            .glass-morph {
-                padding: 35px 25px;
+        .chat-message {
+            padding: 8px;
+            border-bottom: 1px solid #2a2648;
+            font-size: 14px;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            background: #1f1b3a;
+            border: none;
+            border-radius: 60px;
+            padding: 12px 18px;
+            color: white;
+        }
+
+        /* بخش راست : فروشگاه بزرگ حریر */
+        .shop-section {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            background: rgba(25, 22, 55, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 32px;
+            padding: 18px;
+            transition: 0.25s;
+            border: 1px solid #3c3162;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: #b07eff;
+        }
+
+        .product-img {
+            font-size: 58px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .price {
+            color: #d2b0ff;
+            font-size: 20px;
+            margin: 12px 0;
+        }
+
+        .add-to-cart {
+            background: #8B5FBF;
+            border: none;
+            padding: 8px;
+            border-radius: 28px;
+            color: white;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* سبد خرید */
+        .cart-sidebar {
+            position: fixed;
+            left: -380px;
+            top: 0;
+            width: 360px;
+            height: 100vh;
+            background: #0d0b23f2;
+            backdrop-filter: blur(24px);
+            border-right: 1px solid #9b6fcf;
+            padding: 25px;
+            transition: 0.3s;
+            z-index: 200;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.open {
+            left: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            border-bottom: 1px dashed #554c82;
+            padding-bottom: 8px;
+        }
+
+        .checkout-btn {
+            background: #25a56a;
+            width: 100%;
+            padding: 14px;
+            border-radius: 40px;
+            font-weight: bold;
+            margin-top: 20px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            float: left;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard {
+                flex-direction: column;
             }
-            h1 {
-                font-size: 32px;
-            }
-            .greeting-text {
-                font-size: 18px;
-            }
-            .cta-btn {
-                font-size: 17px;
-                padding: 15px 30px;
-            }
-            .stats {
-                gap: 20px;
-            }
-            .stat-number {
-                font-size: 22px;
+            .main-header {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="animated-bg">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-</div>
+<header class="main-header">
+    <div class="logo-area">
+        <div class="logo-icon">🕊️</div>
+        <div class="logo-text">فروشگاه بزرگ حریر</div>
+    </div>
+    <div class="search-bar">
+        <span>🔍</span>
+        <input type="text" id="searchInput" placeholder="جستجوی محصولات...">
+    </div>
+    <div class="nav-icons">
+        <span>❤️</span>
+        <span id="cartIcon">🛒 <span id="cartCount">0</span></span>
+        <span>👤</span>
+    </div>
+</header>
 
-<div class="particles" id="particlesContainer"></div>
+<div class="dashboard">
+    <!-- بخش لایف استریم زنده -->
+    <div class="live-section">
+        <div class="live-header">
+            <div class="live-badge">
+                <span>🔴</span> <span>لایو اکنون | استریم فروش ویژه</span>
+            </div>
+            <div style="font-size:13px;">👥 ۱,۲۴۰ تماشاگر</div>
+        </div>
+        <div class="live-video">
+            <div class="mock-player">
+                <span>📺</span>
+                <p style="margin: 10px;">پخش زنده : معرفی شال‌های ابریشمی حریر</p>
+                <button class="btn-live-action" id="goLiveDemo">⭐ شرکت در لایو و خرید محصول</button>
+            </div>
+        </div>
+        <div class="chat-box" id="chatMessages">
+            <div class="chat-message"><strong>مدیر فروش:</strong> سلام به حریر خوش آمدید! تخفیف ویژه لایو ۲۰٪</div>
+            <div class="chat-message"><strong>ملیکا:</strong> قیمت شال حریر چند؟</div>
+            <div class="chat-message"><strong>حریرپلاس:</strong> کد LHC20 رو استفاده کنید روی تمام محصولات</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="پیام در لایو...">
+            <button id="sendChatBtn" style="background:#8B5FBF; border:none; border-radius:60px; padding:0 20px;">ارسال</button>
+        </div>
+    </div>
 
-<div class="welcome-container">
-    <div class="glass-morph">
-        <div class="avatar-glow">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#b07eff"/>
-                <path d="M2 17L12 22L22 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <path d="M2 12L12 17L22 12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <circle cx="12" cy="12" r="2" fill="white" stroke="none"/>
-            </svg>
+    <!-- فروشگاه محصولات -->
+    <div class="shop-section">
+        <div class="section-title">
+            <span>✨</span> جدیدترین کالاهای حریر
         </div>
-        
-        <div class="welcome-badge">
-            ✨ پلتفرم پیشرفته لایف استریم ✨
-        </div>
-        
-        <h1>
-            به <span class="highlight">حریر</span> خوش آمدید
-        </h1>
-        
-        <div class="greeting-text">
-            🌊 دنیای بدون مرز استریم زنده
-        </div>
-        
-        <p class="description">
-            تجربه‌ای نو از پخش زنده با کیفیت 4K، کمترین تأخیر و امکانات حرفه‌ای.<br>
-            همین حالا به جمع استریمرهای حریر بپیوندید.
-        </p>
-        
-        <!-- دکمه ورود به لینک مشخص شده (با کلیک به آدرس لاگین می‌رود) -->
-        <button id="welcomeHarirBtn" class="cta-btn">
-            🎬 شروع کنید &nbsp;→
-        </button>
-        
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">۵۰۰+</div>
-                <div class="stat-label">استریمر حرفه‌ای</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">۱۰۰K+</div>
-                <div class="stat-label">کاربر فعال</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">۴K</div>
-                <div class="stat-label">کیفیت Ultra HD</div>
-            </div>
-        </div>
-        
-        <div class="footer-note">
-            🔥 حریر پلتفرم | لحظات زنده را با ما به اشتراک بگذار
+        <div class="products-grid" id="productsGrid">
+            <!-- محصولات با جاوااسکریپت پر می‌شوند -->
         </div>
     </div>
 </div>
 
+<!-- سبد خرید کناری -->
+<div id="cartSidebar" class="cart-sidebar">
+    <button class="close-cart" id="closeCartBtn">✖</button>
+    <h3>سبد خرید حریر</h3>
+    <div id="cartItemsList"></div>
+    <div><strong>مجموع: <span id="totalPrice">۰</span> تومان</strong></div>
+    <button class="checkout-btn" id="checkoutBtn">پرداخت و تکمیل خرید</button>
+</div>
+
 <script>
-    // لینک دقیق مورد نظر
-    const TARGET_LOGIN_URL = "https://app-amxnw7dzod8h.appmedo.com/";
-    
-    // رخداد کلیک برای دکمه خوش‌آمدگویی
-    const ctaButton = document.getElementById("welcomeHarirBtn");
-    if(ctaButton) {
-        ctaButton.addEventListener("click", (e) => {
-            e.preventDefault();
-            // افکت کوچک برای بازخورد بهتر
-            ctaButton.style.transform = "scale(0.98)";
-            setTimeout(() => {
-                ctaButton.style.transform = "";
-            }, 120);
-            
-            // هدایت به لینک ورود (تب جدید - مناسب برای لایف استریم)
-            window.open(TARGET_LOGIN_URL, "_blank");
-            
-            // نمایش یک پیام خوش‌آمدگویی کوتاه در کنسول (اختیاری)
-            console.log("✅ هدایت به درگاه ورود حریر: " + TARGET_LOGIN_URL);
-            
-            // اضافه کردن ریپل افکت (اختیاری)
-            const ripple = document.createElement("span");
-            ripple.style.position = "absolute";
-            ripple.style.borderRadius = "50%";
-            ripple.style.backgroundColor = "rgba(255,255,255,0.5)";
-            ripple.style.width = "100px";
-            ripple.style.height = "100px";
-            ripple.style.transform = "translate(-50%, -50%) scale(0)";
-            ripple.style.transition = "transform 0.4s ease-out";
-            ripple.style.pointerEvents = "none";
-            const rect = ctaButton.getBoundingClientRect();
-            ripple.style.left = (rect.left + rect.width/2) + "px";
-            ripple.style.top = (rect.top + rect.height/2) + "px";
-            document.body.appendChild(ripple);
-            setTimeout(() => {
-                ripple.style.transform = "translate(-50%, -50%) scale(4)";
-                ripple.style.opacity = "0";
-                setTimeout(() => ripple.remove(), 500);
-            }, 10);
+    // ---------- دیتابیس محصولات فروشگاه ----------
+    const products = [
+        { id: 1, name: "شال ابریشمی حریر", price: 890000, img: "🧣", category: "شال" },
+        { id: 2, name: "ست روسری حریر", price: 450000, img: "👒", category: "روسری" },
+        { id: 3, name: "مانتو دوزخی حریر", price: 1890000, img: "🧥", category: "مانتو" },
+        { id: 4, name: "کیف دستی لاکچری", price: 1250000, img: "👛", category: "کیف" },
+        { id: 5, name: "عطر طبیعی گل حریر", price: 680000, img: "🌸", category: "عطر" },
+        { id: 6, name: "دستکش چرم حریر", price: 350000, img: "🧤", category: "اکسسوری" }
+    ];
+
+    let cart = [];  // هر آیتم: { id, name, price, quantity }
+    let filteredProducts = [...products];
+
+    // رندر محصولات در گرید فروشگاه
+    function renderProducts() {
+        const grid = document.getElementById("productsGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+        filteredProducts.forEach(prod => {
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.innerHTML = `
+                <div class="product-img">${prod.img}</div>
+                <div class="product-title">${prod.name}</div>
+                <div class="price">${prod.price.toLocaleString()} تومان</div>
+                <button class="add-to-cart" data-id="${prod.id}">➕ افزودن به سبد</button>
+            `;
+            grid.appendChild(card);
+        });
+
+        document.querySelectorAll(".add-to-cart").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const id = parseInt(btn.getAttribute("data-id"));
+                addToCart(id);
+            });
         });
     }
-    
-    // ایجاد ذرات متحرک (particles) برای جلوه بیشتر
-    function createParticles() {
-        const container = document.getElementById("particlesContainer");
-        const particleCount = 65;
-        for(let i = 0; i < particleCount; i++) {
-            const particle = document.createElement("div");
-            particle.classList.add("particle");
-            const size = Math.random() * 6 + 2;
-            particle.style.width = size + "px";
-            particle.style.height = size + "px";
-            particle.style.left = Math.random() * 100 + "%";
-            particle.style.animationDuration = Math.random() * 12 + 8 + "s";
-            particle.style.animationDelay = Math.random() * 10 + "s";
-            particle.style.opacity = Math.random() * 0.5 + 0.2;
-            container.appendChild(particle);
+
+    function addToCart(productId) {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+        const existing = cart.find(item => item.id === productId);
+        if (existing) {
+            existing.quantity++;
+        } else {
+            cart.push({ ...product, quantity: 1 });
         }
+        updateCartUI();
+        showTemporaryMessage("✅ " + product.name + " به سبد اضافه شد");
     }
-    createParticles();
-    
-    // افکت تایپ لوکیشن (برای زیبایی لوگو)
-    console.log("✨ صفحه خوش‌آمدگویی حریر | مدرن و روان | لینک ورود فعال شد");
+
+    function updateCartUI() {
+        const cartListDiv = document.getElementById("cartItemsList");
+        const totalSpan = document.getElementById("totalPrice");
+        const cartCountSpan = document.getElementById("cartCount");
+        let total = 0;
+        let itemCount = 0;
+        cartListDiv.innerHTML = "";
+        cart.forEach((item, idx) => {
+            total += item.price * item.quantity;
+            itemCount += item.quantity;
+            const div = document.createElement("div");
+            div.className = "cart-item";
+            div.innerHTML = `
+                <span>${item.name} (${item.quantity})</span>
+                <span>${(item.price * item.quantity).toLocaleString()} تومان</span>
+                <button style="background:#ff5555; border:none; border-radius:30px; padding:2px 12px; cursor:pointer;" data-cartidx="${idx}">حذف</button>
+            `;
+            cartListDiv.appendChild(div);
+        });
+        totalSpan.innerText = total.toLocaleString();
+        cartCountSpan.innerText = itemCount;
+
+        // افزودن event به دکمه‌های حذف
+        document.querySelectorAll("[data-cartidx]").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const idx = parseInt(btn.getAttribute("data-cartidx"));
+                cart.splice(idx, 1);
+                updateCartUI();
+            });
+        });
+    }
+
+    function showTemporaryMessage(msg) {
+        const tempDiv = document.createElement("div");
+        tempDiv.innerText = msg;
+        tempDiv.style.position = "fixed";
+        tempDiv.style.bottom = "20px";
+        tempDiv.style.left = "20px";
+        tempDiv.style.backgroundColor = "#2b2155";
+        tempDiv.style.padding = "12px 20px";
+        tempDiv.style.borderRadius = "40px";
+        tempDiv.style.zIndex = "999";
+        tempDiv.style.backdropFilter = "blur(10px)";
+        document.body.appendChild(tempDiv);
+        setTimeout(() => tempDiv.remove(), 1800);
+    }
+
+    // جستجو محصولات
+    document.getElementById("searchInput")?.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        filteredProducts = products.filter(p => p.name.includes(query) || p.category.includes(query));
+        renderProducts();
+    });
+
+    // سبد خرید سایدبار
+    const cartSidebar = document.getElementById("cartSidebar");
+    document.getElementById("cartIcon")?.addEventListener("click", () => {
+        cartSidebar.classList.add("open");
+    });
+    document.getElementById("closeCartBtn")?.addEventListener("click", () => {
+        cartSidebar.classList.remove("open");
+    });
+    document.getElementById("checkoutBtn")?.addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("سبد خرید خالی است!");
+            return;
+        }
+        alert(`تشکر از خرید شما! مبلغ کل ${document.getElementById("totalPrice").innerText} تومان پرداخت شد (درگاه فرضی).`);
+        cart = [];
+        updateCartUI();
+        cartSidebar.classList.remove("open");
+    });
+
+    // بخش چت زنده لایف استریم
+    const chatMessagesDiv = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const sendBtn = document.getElementById("sendChatBtn");
+
+    function addChatMessage(username, message) {
+        const msgDiv = document.createElement("div");
+        msgDiv.className = "chat-message";
+        msgDiv.innerHTML = `<strong>${username}:</strong> ${message}`;
+        chatMessagesDiv.appendChild(msgDiv);
+        chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
+    }
+
+    sendBtn?.addEventListener("click", () => {
+        const msg = chatInput.value.trim();
+        if (msg === "") return;
+        addChatMessage("شما", msg);
+        // پاسخ خودکار شبیه‌سازی فروشنده
+        setTimeout(() => {
+            addChatMessage("حریر لایو", "ممنون از پیامت! ❤️ کد تخفیف لایو: HARIR20");
+        }, 800);
+        chatInput.value = "";
+    });
+
+    // دکمه شرکت در لایو (اضافه کردن محصول ویژه)
+    document.getElementById("goLiveDemo")?.addEventListener("click", () => {
+        const liveProduct = { id: 99, name: "شال طلایی حریر (لایو ویژه)", price: 990000, img: "👘" };
+        if(!products.find(p=>p.id===99)){
+            products.push(liveProduct);
+            filteredProducts = [...products];
+            renderProducts();
+        }
+        addToCart(99);
+        addChatMessage("سیستم", "محصول ویژه لایو به سبد شما اضافه شد 🎁");
+    });
+
+    // رندر اولیه
+    renderProducts();
+    updateCartUI();
+
+    // ---- سیستم تبدیل به فروشگاه بزرگ و لایف استریم کامل شد ----
+    console.log("✅ فروشگاه بزرگ حریر با لایف استریم فعال شد | ورژن 2.0");
 </script>
 </body>
 </html>
