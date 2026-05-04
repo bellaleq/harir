@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>حریر | Harir | لوکس‌ترین مارکت‌پلیس</title>
+  <title>حریر | Harir | لوکس‌ترین مارکت‌پلیس + لایف استریم فیبل</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -41,6 +41,7 @@
       --gold-glow: 0 0 15px rgba(250, 112, 154, 0.4);
       --gallery-bg: rgba(255, 245, 240, 0.6);
       --db-card-bg: rgba(255, 255, 255, 0.7);
+      --stream-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
     }
 
     body.night-mode {
@@ -63,6 +64,7 @@
       --stats-bg: linear-gradient(135deg, rgba(30, 30, 50, 0.8), rgba(20, 20, 40, 0.8));
       --gallery-bg: rgba(30, 30, 50, 0.6);
       --db-card-bg: rgba(30, 30, 50, 0.8);
+      --stream-gradient: linear-gradient(135deg, #11998e, #38ef7d);
     }
 
     body {
@@ -410,8 +412,8 @@
       .gallery-item { width: calc(33.33% - 0.7rem); }
     }
 
-    /* دکمه مخصوص دیتابیس */
-    .database-access-card {
+    /* دکمه مخصوص دیتابیس و لایف استریم */
+    .database-access-card, .stream-access-card {
       background: linear-gradient(135deg, rgba(250, 112, 154, 0.2), rgba(254, 225, 64, 0.2));
       border: 2px solid #fa709a;
       border-radius: 2rem;
@@ -421,9 +423,18 @@
       transition: all 0.3s;
     }
 
-    .database-access-card:hover {
+    .stream-access-card {
+      background: linear-gradient(135deg, rgba(67, 233, 123, 0.2), rgba(56, 249, 215, 0.2));
+      border: 2px solid #2ecc71;
+    }
+
+    .database-access-card:hover, .stream-access-card:hover {
       transform: scale(1.01);
       box-shadow: 0 15px 35px rgba(250, 112, 154, 0.3);
+    }
+
+    .stream-access-card:hover {
+      box-shadow: 0 15px 35px rgba(46, 204, 113, 0.3);
     }
 
     .db-icon {
@@ -435,7 +446,16 @@
       margin-bottom: 0.3rem;
     }
 
-    .btn-database {
+    .stream-icon {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.3rem;
+    }
+
+    .btn-database, .btn-stream {
       background: linear-gradient(105deg, #667eea, #764ba2);
       border: none;
       padding: 0.7rem 1.8rem;
@@ -453,7 +473,11 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    .btn-database:hover {
+    .btn-stream {
+      background: linear-gradient(105deg, #11998e, #38ef7d);
+    }
+
+    .btn-database:hover, .btn-stream:hover {
       transform: translateY(-2px);
       filter: brightness(1.05);
     }
@@ -571,7 +595,6 @@
       width: fit-content;
       margin-left: auto;
       margin-right: auto;
-      color: var(--info-text);
     }
 
     .footer {
@@ -629,6 +652,17 @@
         <i class="fas fa-sign-in-alt"></i> <span id="dbBtnText">ورود به دیتابیس مرکزی</span>
       </button>
       <div style="margin-top: 8px; font-size: 0.55rem; opacity:0.7;" id="dbLinkHint">لینک مستقل دیتابیس: harir-database.ir</div>
+    </div>
+
+    <!-- کارت جدید لایف استریم فیبل -->
+    <div class="stream-access-card" data-aos="flip-up" data-aos-delay="100">
+      <div class="stream-icon"><i class="fas fa-video"></i> <i class="fas fa-broadcast-tower"></i></div>
+      <div class="action-title" style="font-size:1.1rem; color: #2ecc71;" id="streamCardTitle">🎬 لایف استریم فیبل | پخش زنده</div>
+      <p id="streamCardDesc" style="font-size:0.7rem; color: var(--text-light); margin-bottom:0.8rem;">ورود به سامانه لایف استریم فیبل — تجربه پخش زنده با کیفیت عالی</p>
+      <button id="goToStreamBtn" class="btn-stream">
+        <i class="fas fa-play-circle"></i> <span id="streamBtnText">ورود به لایف استریم فیبل</span>
+      </button>
+      <div style="margin-top: 8px; font-size: 0.55rem; opacity:0.7;" id="streamLinkHint">لینک مستقیم سامانه: faybel.livestream</div>
     </div>
 
     <div class="stats-grid">
@@ -704,14 +738,14 @@
 <!-- Favicon & Meta -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/Wr2ksmX/file-000000006a7c71f49c4be3dd0bfcfb6a.png">
 <meta property="og:title" content="حریر | Harir">
-<meta property="og:description" content="لوکس‌ترین مارکت‌پلیس خرید و فروش با دیتابیس اختصاصی">
+<meta property="og:description" content="لوکس‌ترین مارکت‌پلیس خرید و فروش با دیتابیس اختصاصی و لایف استریم فیبل">
 <meta property="og:image" content="https://i.ibb.co/Wr2ksmX/file-000000006a7c71f49c4be3dd0bfcfb6a.png">
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ once: true, duration: 600 });
   
-  // زبان‌ها
+  // زبان‌ها با اضافه شدن ترجمه لایف استریم
   const langDict = {
     fa: {
       tagline: '<i class="fas fa-infinity"></i> <span>لوکس‌ترین بازار خرید و فروش</span> <i class="fas fa-infinity"></i>',
@@ -721,6 +755,10 @@
       dbCardDesc: "مدیریت محصولات، سفارشات و اطلاعات بازار در فضای ابری اختصاصی",
       dbBtnText: "ورود به دیتابیس مرکزی",
       dbLinkHint: "لینک مستقل دیتابیس: harir-database.ir",
+      streamCardTitle: "🎬 لایف استریم فیبل | پخش زنده",
+      streamCardDesc: "ورود به سامانه لایف استریم فیبل — تجربه پخش زنده با کیفیت عالی",
+      streamBtnText: "ورود به لایف استریم فیبل",
+      streamLinkHint: "لینک مستقیم سامانه: faybel.livestream",
       platformTitle: "پلتفرم حریر",
       enterBtnText: "ورود به بازار",
       platformNote: "ضمانت بازگشت کالا • پرداخت امن",
@@ -745,6 +783,10 @@
       dbCardDesc: "د محصولاتو، امرونو او بازار معلوماتو مدیریت په ځانګړي ابری ځای کې",
       dbBtnText: "مرکزي ډیټابیس ته ننوځئ",
       dbLinkHint: "مستقل ډیټابیس لینک: harir-database.ir",
+      streamCardTitle: "🎬 د فیبل ژوندۍ خپرونه",
+      streamCardDesc: "د فیبل لایف سټریم سیسټم ته ننوځئ — د لوړ کیفیت ژوندۍ خپرونې تجربه",
+      streamBtnText: "فیبل لایف سټریم ته ننوځئ",
+      streamLinkHint: "مستقیم لینک: faybel.livestream",
       platformTitle: "حریر پلیټ فارم",
       enterBtnText: "بازار ته ننوځئ",
       platformNote: "د توکو بیرته راستنیدو تضمین • خوندي تادیه",
@@ -769,6 +811,10 @@
       dbCardDesc: "Manage products, orders and market data in dedicated cloud space",
       dbBtnText: "Enter Central Database",
       dbLinkHint: "Independent database link: harir-database.ir",
+      streamCardTitle: "🎬 Faybel LiveStream",
+      streamCardDesc: "Enter Faybel Livestream system — high quality live broadcasting experience",
+      streamBtnText: "Enter Faybel LiveStream",
+      streamLinkHint: "Direct link: faybel.livestream",
       platformTitle: "Harir Platform",
       enterBtnText: "Enter Market",
       platformNote: "Money-back Guarantee • Secure Payment",
@@ -790,7 +836,8 @@
   let currentLang = 'fa';
   let isNightMode = false;
   
-  const DATABASE_LINK = "https://app-bddzo4xrturl.appmedo.com/"; // لینک دیتابیس اصلی
+  const DATABASE_LINK = "https://app-bddzo4xrturl.appmedo.com/";
+  const STREAM_LINK = "https://app-b63hh84i0ow1.appmedo.com/";   // لینک لایف استریم فیبل
   const PLATFORM_LINK = "https://app-amxnw7dzod8h.appmedo.com/";
   const WHATSAPP_LINK = "https://chat.whatsapp.com/JFdc1kdRRpdGO6lj3mO6r4";
   
@@ -826,6 +873,13 @@
     document.getElementById('dbCardDesc').innerText = dict.dbCardDesc;
     document.getElementById('dbBtnText').innerText = dict.dbBtnText;
     document.getElementById('dbLinkHint').innerHTML = dict.dbLinkHint;
+    
+    // ترجمه بخش لایف استریم
+    document.getElementById('streamCardTitle').innerText = dict.streamCardTitle;
+    document.getElementById('streamCardDesc').innerText = dict.streamCardDesc;
+    document.getElementById('streamBtnText').innerText = dict.streamBtnText;
+    document.getElementById('streamLinkHint').innerHTML = dict.streamLinkHint;
+    
     document.getElementById('platformTitle').innerText = dict.platformTitle;
     document.getElementById('enterBtnText').innerText = dict.enterBtnText;
     document.getElementById('platformNote').innerHTML = `<i class="fas fa-shield-alt"></i> ${dict.platformNote}`;
@@ -884,6 +938,17 @@
     setTimeout(() => { window.location.href = DATABASE_LINK; }, 800);
   }
   
+  function goToStream() {
+    Swal.fire({
+      title: 'در حال انتقال به لایف استریم فیبل',
+      text: 'شما به سامانه پخش زنده هدایت می‌شوید',
+      icon: 'info',
+      timer: 1200,
+      showConfirmButton: false
+    });
+    setTimeout(() => { window.location.href = STREAM_LINK; }, 800);
+  }
+  
   function goToPlatform() {
     Swal.fire({ title: 'ورود به بازار حریر', timer: 1000, showConfirmButton: false, icon: 'success' });
     setTimeout(() => { window.location.href = PLATFORM_LINK; }, 800);
@@ -894,6 +959,7 @@
   }
   
   document.getElementById('goToDatabaseBtn').addEventListener('click', goToDatabase);
+  document.getElementById('goToStreamBtn').addEventListener('click', goToStream);
   document.getElementById('directEnterBtn').addEventListener('click', goToPlatform);
   document.getElementById('whatsappGroupBtn').addEventListener('click', goToWhatsapp);
   document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
