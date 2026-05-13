@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>حریر | Harir | لوکس‌ترین مارکت‌پلیس</title>
+  <title>حریر | Harir | ترکیب نارنجی و سفید</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,319 +16,235 @@
       box-sizing: border-box;
     }
 
+    /* ============================================
+       پالت اختصاصی: فقط نارنجی و سفید + مشکی ملایم برای متن
+       ============================================ */
     :root {
-      --bg-gradient-start: radial-gradient(ellipse at 20% 35%, #ffe6cc, #ffd9b5);
-      --bg-solid: #fff5ec;
-      --card-bg: rgba(255, 255, 255, 0.92);
-      --card-shadow: 0 35px 70px rgba(0, 0, 0, 0.12), 0 0 0 1.5px rgba(255, 154, 158, 0.3);
-      --header-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-      --text-primary: #2c241a;
-      --text-secondary: #5a4a36;
-      --text-light: #8b7355;
-      --btn-gradient: linear-gradient(105deg, #f093fb 0%, #f5576c 100%);
-      --btn-hover: linear-gradient(105deg, #e06dc9, #f43b54);
-      --cat-bg: rgba(255, 245, 235, 0.9);
-      --cat-border: rgba(250, 112, 154, 0.4);
-      --cat-color: #5a3e2a;
-      --footer-bg: rgba(0, 0, 0, 0.04);
-      --footer-text: #8b765a;
-      --info-bg: rgba(250, 112, 154, 0.08);
-      --lang-bg: rgba(0, 0, 0, 0.04);
-      --lang-btn-bg: rgba(255, 245, 240, 0.95);
-      --lang-border: rgba(250, 112, 154, 0.5);
-      --glow-text: linear-gradient(135deg, #fa709a, #fee140);
-      --stats-bg: linear-gradient(135deg, rgba(255, 245, 235, 0.9), rgba(255, 235, 215, 0.9));
-      --gold-glow: 0 0 15px rgba(250, 112, 154, 0.4);
-      --gallery-bg: rgba(255, 245, 240, 0.6);
-    }
-
-    body.night-mode {
-      --bg-gradient-start: radial-gradient(ellipse at 20% 35%, #1a1a2e, #16213e);
-      --bg-solid: #0f0f1a;
-      --card-bg: rgba(25, 25, 45, 0.94);
-      --card-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 0 1.5px rgba(102, 126, 234, 0.4);
-      --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --text-primary: #f0e6d8;
-      --text-secondary: #d4c5b0;
-      --text-light: #a8967a;
-      --btn-gradient: linear-gradient(105deg, #667eea, #764ba2);
-      --cat-bg: rgba(30, 30, 50, 0.85);
-      --cat-border: rgba(102, 126, 234, 0.4);
-      --cat-color: #e0d0c0;
-      --footer-bg: rgba(0, 0, 0, 0.5);
-      --lang-bg: rgba(0, 0, 0, 0.35);
-      --lang-btn-bg: rgba(30, 30, 50, 0.9);
-      --glow-text: linear-gradient(135deg, #667eea, #764ba2);
-      --stats-bg: linear-gradient(135deg, rgba(30, 30, 50, 0.8), rgba(20, 20, 40, 0.8));
-      --gallery-bg: rgba(30, 30, 50, 0.6);
+      --orange-dark: #c2410c;      /* نارنجی تیره (سوخته) */
+      --orange-primary: #ea580c;   /* نارنجی اصلی و زنده */
+      --orange-light: #f97316;     /* نارنجی روشن */
+      --orange-soft: #ffedd5;      /* کرم نارنجی بسیار روشن (پس‌زمینه) */
+      --orange-mist: #fff7ed;      /* سفید با ته رنگ نارنجی */
+      --white-pure: #ffffff;
+      --white-off: #fefcf9;
+      --gray-light: #f5f0eb;
+      --text-dark: #2c1a0e;
+      --text-muted: #5c3d2a;
+      --shadow-orange: 0 15px 30px -12px rgba(193, 65, 12, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.92);
+      --glass-border: rgba(234, 88, 12, 0.3);
     }
 
     body {
-      min-height: 100vh;
-      background: var(--bg-gradient-start), var(--bg-solid);
+      background: linear-gradient(120deg, var(--orange-mist) 0%, var(--white-off) 100%);
       font-family: 'Vazirmatn', 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 100vh;
       padding: 1.5rem;
       position: relative;
-      transition: background 0.4s ease;
     }
 
+    /* دایره‌های دکوراتیو فقط نارنجی کمرنگ */
     body::before {
       content: "";
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
-      background-image: radial-gradient(circle at 15% 30%, rgba(250, 112, 154, 0.12) 2%, transparent 2.5%),
-                        radial-gradient(circle at 85% 70%, rgba(254, 225, 64, 0.1) 1.5%, transparent 2%);
-      background-size: 60px 60px, 75px 75px;
-      animation: floatParticles 20s infinite alternate;
+      top: 0;
+      left: 0;
+      background-image: radial-gradient(circle at 10% 20%, rgba(234, 88, 12, 0.04) 2%, transparent 2.5%),
+                        radial-gradient(circle at 90% 75%, rgba(249, 115, 22, 0.04) 1.5%, transparent 2%);
+      background-size: 55px 55px, 70px 70px;
       pointer-events: none;
+      z-index: 0;
     }
 
-    @keyframes floatParticles {
-      0% { transform: translate(0, 0); opacity: 0.3; }
-      100% { transform: translate(-15px, -10px); opacity: 0.7; }
-    }
-
+    /* کانتینر اصلی با شیشه‌ای و سایه نارنجی */
     .harir-premium {
-      max-width: 1080px;
+      max-width: 1100px;
       width: 100%;
-      background: var(--card-bg);
-      backdrop-filter: blur(22px);
-      border-radius: 3rem;
-      box-shadow: var(--card-shadow);
+      margin: 0 auto;
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      border-radius: 2.5rem;
+      box-shadow: var(--shadow-orange), 0 0 0 1px var(--glass-border);
       overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      transition: all 0.4s ease;
       position: relative;
-      z-index: 20;
+      z-index: 10;
+      border: 1px solid rgba(234, 88, 12, 0.15);
     }
 
+    /* هدر با گرادینت نارنجی خالص */
     .dynamic-header {
-      background: var(--header-gradient);
-      background-size: 200% 200%;
-      animation: shimmerMove 8s ease infinite;
-      padding: 1.6rem 1.5rem 1.3rem;
+      background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange-primary) 50%, var(--orange-light) 100%);
+      padding: 1.8rem 1.5rem 1.5rem;
       text-align: center;
       position: relative;
     }
 
-    @keyframes shimmerMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .dynamic-header::after {
-      content: "✦ ༺ ✦ ༻ ✦";
-      font-size: 2.5rem;
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      right: 0;
-      opacity: 0.15;
-      letter-spacing: 12px;
-      pointer-events: none;
-    }
-
     .brand-name {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #fff8e7, #ffddb0, #fff0d0);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.15);
-      letter-spacing: 1px;
+      color: white;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      letter-spacing: -0.5px;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+
+    .motto-lux {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 5px 18px;
+      border-radius: 60px;
+      margin-top: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
     }
 
     .theme-toggle {
       position: absolute;
       top: 1rem;
       right: 1.2rem;
-      background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 50px;
-      padding: 0.35rem 1rem;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 60px;
+      padding: 0.4rem 1rem;
       color: white;
       cursor: pointer;
-      font-size: 0.7rem;
+      font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 6px;
-      backdrop-filter: blur(8px);
+      gap: 8px;
+      font-size: 0.7rem;
       transition: 0.2s;
-      z-index: 30;
-      font-weight: 600;
     }
 
-    .theme-toggle:hover {
-      background: rgba(0,0,0,0.6);
-      transform: scale(0.95);
+    body[dir="ltr"] .theme-toggle {
+      right: auto;
+      left: 1.2rem;
     }
 
-    .motto-lux {
-      font-size: 0.72rem;
-      font-weight: 600;
-      background: rgba(0, 0, 0, 0.08);
-      backdrop-filter: blur(8px);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 4px 20px;
-      border-radius: 60px;
-      margin-top: 10px;
-      border: 1px solid rgba(255, 215, 130, 0.5);
-      color: #3a2c1c;
-    }
-
-    body.night-mode .motto-lux {
-      background: rgba(0, 0, 0, 0.4);
-      color: #fef3e0;
-    }
-
+    /* نوار زبان - ساده و نارنجی */
     .lang-bar {
       display: flex;
       justify-content: center;
-      gap: 0.9rem;
-      padding: 0.8rem 1.2rem 0.5rem;
-      background: var(--lang-bg);
+      gap: 0.8rem;
+      padding: 0.7rem 1rem;
+      background: rgba(255, 245, 235, 0.7);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(234, 88, 12, 0.2);
       flex-wrap: wrap;
     }
 
     .lang-btn {
-      background: var(--lang-btn-bg);
-      border: 1px solid var(--lang-border);
-      font-size: 0.8rem;
+      background: white;
+      border: 1px solid var(--orange-light);
+      font-size: 0.75rem;
       font-weight: 700;
-      padding: 0.4rem 1.2rem;
-      border-radius: 50px;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
       cursor: pointer;
-      transition: 0.3s;
-      color: var(--text-secondary);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      color: var(--orange-dark);
+      transition: all 0.25s;
     }
 
     .lang-btn.active {
-      background: linear-gradient(105deg, #fa709a, #fee140);
-      border-color: #fff0b0;
+      background: var(--orange-primary);
       color: white;
-      box-shadow: 0 4px 12px rgba(250, 112, 154, 0.45);
-      transform: scale(1.02);
-    }
-
-    .lang-btn:hover:not(.active) {
-      transform: translateY(-2px);
-      background: rgba(250, 112, 154, 0.2);
+      border-color: var(--orange-primary);
+      box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
     }
 
     .content-area {
-      padding: 1.5rem 1.8rem 1.5rem;
+      padding: 1.5rem 1.8rem;
     }
 
-    .hero-section {
-      text-align: center;
-      margin-bottom: 1.2rem;
-    }
-
+    /* عنوان‌ها با خط زیر نارنجی */
     .hero-title {
-      font-size: 1.9rem;
+      font-size: 2rem;
       font-weight: 800;
-      background: var(--glow-text);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.4rem;
+      color: var(--orange-dark);
+      margin-bottom: 0.3rem;
+      text-align: center;
     }
 
     .hero-subtitle {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       font-size: 0.85rem;
-      line-height: 1.5;
+      text-align: center;
     }
 
+    /* کارت آمار با حاشیه نارنجی ملایم */
     .stats-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
-      margin: 1rem 0 1.2rem;
+      margin: 1.5rem 0;
     }
 
     .stat-card {
-      background: var(--stats-bg);
-      border-radius: 1.5rem;
-      padding: 0.5rem 1rem;
+      background: white;
+      border-radius: 1.8rem;
+      padding: 0.7rem 1rem;
+      min-width: 85px;
       text-align: center;
-      border: 1px solid var(--cat-border);
-      min-width: 80px;
-      transition: all 0.25s;
-      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+      border: 1px solid rgba(234, 88, 12, 0.25);
+      transition: all 0.2s;
     }
 
     .stat-card:hover {
       transform: translateY(-4px);
-      border-color: #fa709a;
-      box-shadow: var(--gold-glow);
+      border-color: var(--orange-primary);
+      box-shadow: 0 10px 20px rgba(234, 88, 12, 0.12);
     }
 
     .stat-number {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      color: var(--orange-primary);
     }
 
     .stat-label {
       font-size: 0.6rem;
-      color: var(--text-light);
+      color: var(--text-muted);
       font-weight: 500;
     }
 
+    /* بنر پیشنهاد - فقط نارنجی و سفید */
     .offer-banner {
-      background: linear-gradient(135deg, rgba(250, 112, 154, 0.12), rgba(254, 225, 64, 0.12));
+      background: linear-gradient(105deg, rgba(234, 88, 12, 0.08), rgba(249, 115, 22, 0.05));
       border-radius: 2rem;
-      padding: 0.5rem 0.8rem;
+      padding: 0.6rem;
       text-align: center;
-      margin: 0.3rem 0 1.2rem;
-      border: 1px dashed rgba(250, 112, 154, 0.5);
-      animation: softPulse 2s infinite;
-    }
-
-    @keyframes softPulse {
-      0% { opacity: 0.8; }
-      50% { opacity: 1; box-shadow: 0 0 8px rgba(250, 112, 154, 0.3); }
-      100% { opacity: 0.8; }
+      margin: 1rem 0 1.5rem;
+      border-right: 3px solid var(--orange-primary);
+      border-left: 1px solid transparent;
     }
 
     .offer-text {
       font-size: 0.7rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      color: var(--orange-dark);
     }
 
-    .categories-section {
-      margin: 1rem 0 1.2rem;
-    }
-
+    /* دسته‌بندی‌ها */
     .section-label {
       text-align: center;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.8rem;
-      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--orange-dark);
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
     }
 
     .cat-grid {
@@ -336,55 +252,55 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.7rem;
+      margin-bottom: 1rem;
     }
 
     .cat-item {
-      background: var(--cat-bg);
-      border-radius: 60px;
-      padding: 0.4rem 1.1rem;
-      font-size: 0.68rem;
+      background: white;
+      border-radius: 50px;
+      padding: 0.45rem 1.2rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      color: var(--cat-color);
-      border: 1px solid var(--cat-border);
-      transition: all 0.25s;
+      color: var(--orange-dark);
+      border: 1px solid rgba(234, 88, 12, 0.3);
+      transition: 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
     .cat-item:hover {
-      transform: translateY(-3px);
-      border-color: #fa709a;
-      box-shadow: var(--gold-glow);
+      background: var(--orange-primary);
+      color: white;
+      border-color: var(--orange-primary);
+      transform: translateY(-2px);
     }
 
-    .gallery-section {
-      margin: 1.2rem 0 1.2rem;
-    }
-
+    /* گالری محصولات */
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
+      margin: 0.5rem 0 1rem;
     }
 
     .gallery-item {
-      width: calc(25% - 0.75rem);
+      width: calc(25% - 0.8rem);
       min-width: 105px;
-      background: var(--gallery-bg);
+      background: white;
       border-radius: 1.2rem;
       overflow: hidden;
-      text-align: center;
-      border: 1px solid var(--cat-border);
-      transition: all 0.35s;
+      border: 1px solid var(--orange-soft);
+      transition: all 0.3s;
       cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
 
     .gallery-item:hover {
-      transform: translateY(-6px) scale(1.02);
-      border-color: #fa709a;
-      box-shadow: var(--gold-glow);
+      transform: translateY(-6px);
+      border-color: var(--orange-primary);
+      box-shadow: 0 12px 20px rgba(234, 88, 12, 0.15);
     }
 
     .gallery-img {
@@ -392,168 +308,213 @@
       aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
-      transition: transform 0.3s;
     }
 
     .gallery-title {
       font-size: 0.6rem;
       font-weight: 700;
-      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--orange-dark);
       padding: 0.45rem 0.2rem;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(6px);
+      text-align: center;
+      border-top: 1px solid rgba(234, 88, 12, 0.2);
     }
 
     @media (max-width: 550px) {
       .gallery-item { width: calc(33.33% - 0.7rem); }
     }
 
+    /* کارت‌های اقدام */
     .actions-section {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem;
-      margin: 1.2rem 0 1rem;
+      gap: 1.5rem;
+      margin: 1.5rem 0 1rem;
     }
 
     .action-card {
       flex: 1;
-      min-width: 210px;
-      background: linear-gradient(145deg, #fff8f0, #fff0e6);
+      min-width: 220px;
+      background: white;
       border-radius: 2rem;
-      padding: 1.2rem 0.8rem;
+      padding: 1.3rem 0.8rem;
       text-align: center;
-      border: 1px solid var(--cat-border);
-      transition: all 0.35s;
-    }
-
-    body.night-mode .action-card {
-      background: linear-gradient(145deg, #23233a, #1a1a30);
+      border: 1px solid rgba(234, 88, 12, 0.2);
+      transition: all 0.3s;
+      box-shadow: 0 10px 18px rgba(0,0,0,0.03);
     }
 
     .action-card:hover {
       transform: translateY(-6px);
-      border-color: #fa709a;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      border-color: var(--orange-primary);
+      box-shadow: 0 18px 28px rgba(234, 88, 12, 0.12);
     }
 
     .action-icon {
       font-size: 2rem;
-      background: linear-gradient(135deg, #fa709a, #fee140);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      color: var(--orange-primary);
       margin-bottom: 0.5rem;
     }
 
     .action-title {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 0.7rem;
+      color: var(--orange-dark);
+      margin-bottom: 0.75rem;
     }
 
-    .btn-gold {
-      background: var(--btn-gradient);
+    .btn-orange {
+      background: var(--orange-primary);
       border: none;
-      padding: 0.55rem 1.3rem;
+      padding: 0.6rem 1.3rem;
       border-radius: 2.5rem;
       font-weight: 800;
       color: white;
       cursor: pointer;
-      transition: 0.25s;
+      transition: all 0.2s;
       font-family: inherit;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-size: 0.8rem;
+      box-shadow: 0 3px 8px rgba(234, 88, 12, 0.3);
     }
 
-    .btn-gold:hover {
-      background: var(--btn-hover);
+    .btn-orange:hover {
+      background: var(--orange-dark);
       transform: scale(0.96);
     }
 
-    .features-grid {
+    .action-note {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    /* ویژگی‌ها و اعتماد */
+    .features-grid, .trust-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.8rem;
-      margin: 0.8rem 0;
+      margin: 1rem 0;
     }
 
-    .feature-item {
-      background: var(--stats-bg);
-      border-radius: 1.5rem;
+    .feature-item, .trust-item {
+      background: white;
+      border-radius: 2rem;
       padding: 0.3rem 1rem;
       font-size: 0.65rem;
-      color: var(--text-secondary);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .trust-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin: 0.5rem 0;
-    }
-
-    .trust-item {
-      font-size: 0.6rem;
-      color: var(--text-light);
+      color: var(--text-muted);
       display: inline-flex;
       align-items: center;
       gap: 5px;
+      border: 1px solid rgba(234, 88, 12, 0.2);
     }
 
     .info-message {
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       font-size: 0.65rem;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: var(--info-bg);
-      padding: 0.5rem 1rem;
+      background: rgba(234, 88, 12, 0.05);
+      padding: 0.6rem 1rem;
       border-radius: 50px;
       width: fit-content;
       margin-left: auto;
       margin-right: auto;
+      color: var(--text-muted);
     }
 
     .footer {
-      background: var(--footer-bg);
+      background: rgba(0,0,0,0.02);
       padding: 0.8rem;
       text-align: center;
       font-size: 0.6rem;
-      color: var(--footer-text);
-      border-top: 1px solid var(--cat-border);
+      color: var(--text-muted);
+      border-top: 1px solid rgba(234, 88, 12, 0.15);
     }
 
-    body[dir="rtl"] .theme-toggle {
-      right: auto;
-      left: 1.2rem;
+    /* حالت شب: معکوس هوشمند با حفظ تم نارنجی و سفید */
+    body.night-mode {
+      background: linear-gradient(145deg, #1e1a16, #221e1a);
+    }
+    body.night-mode .harir-premium {
+      background: rgba(28, 25, 23, 0.92);
+      backdrop-filter: blur(16px);
+      border-color: rgba(249, 115, 22, 0.4);
+    }
+    body.night-mode .brand-name,
+    body.night-mode .motto-lux {
+      color: #ffd9b5;
+    }
+    body.night-mode .stat-card,
+    body.night-mode .cat-item,
+    body.night-mode .gallery-item,
+    body.night-mode .action-card,
+    body.night-mode .feature-item,
+    body.night-mode .trust-item {
+      background: #2a2622;
+      border-color: rgba(249, 115, 22, 0.4);
+      color: #f0e0cc;
+    }
+    body.night-mode .stat-number {
+      color: var(--orange-light);
+    }
+    body.night-mode .hero-title,
+    body.night-mode .action-title,
+    body.night-mode .section-label {
+      color: #ffbc8c;
+    }
+    body.night-mode .hero-subtitle,
+    body.night-mode .stat-label,
+    body.night-mode .action-note {
+      color: #cfbcac;
+    }
+    body.night-mode .offer-banner {
+      background: rgba(249, 115, 22, 0.12);
+      border-right-color: var(--orange-light);
+    }
+    body.night-mode .btn-orange {
+      background: var(--orange-light);
+      color: #2c1a0e;
+    }
+    body.night-mode .btn-orange:hover {
+      background: var(--orange-primary);
+      color: white;
+    }
+    body.night-mode .lang-bar {
+      background: rgba(30, 27, 24, 0.7);
+    }
+    body.night-mode .lang-btn {
+      background: #35302b;
+      color: #ffbc8c;
+      border-color: #f97316;
+    }
+    body.night-mode .lang-btn.active {
+      background: var(--orange-primary);
+      color: white;
     }
 
     @media (max-width: 680px) {
       .actions-section { flex-direction: column; }
-      .brand-name { font-size: 1.9rem; }
+      .brand-name { font-size: 1.8rem; }
       .hero-title { font-size: 1.5rem; }
-      .content-area { padding: 1.2rem; }
+      .content-area { padding: 1rem; }
     }
   </style>
 </head>
 <body>
-<div class="harir-premium" data-aos="zoom-in" data-aos-duration="700">
+<div class="harir-premium" data-aos="fade-up" data-aos-duration="700">
   <div class="dynamic-header">
     <button class="theme-toggle" id="themeToggleBtn">
       <i class="fas fa-moon"></i> <span id="themeText">شب</span>
     </button>
-    <div class="brand-name">حریر | Harir | حریر</div>
+    <div class="brand-name">حریر | Harir</div>
     <div class="motto-lux" id="dynamicTagline">
-      <i class="fas fa-infinity"></i> <span>لوکس‌ترین بازار خرید و فروش</span> <i class="fas fa-infinity"></i>
+      <i class="fas fa-infinity"></i> <span>بازار لوکس نارنجی و سفید</span> <i class="fas fa-infinity"></i>
     </div>
   </div>
 
@@ -566,7 +527,7 @@
   <div class="content-area">
     <div class="hero-section">
       <h1 class="hero-title" id="mainGreeting">به حریر خوش آمدید</h1>
-      <p class="hero-subtitle" id="subGreeting">خرید، فروش، معامله — امنیت، کیفیت، اعتماد، لوکس</p>
+      <p class="hero-subtitle" id="subGreeting">خرید، فروش — امنیت، کیفیت، اعتماد</p>
     </div>
 
     <div class="stats-grid">
@@ -601,14 +562,14 @@
       <div class="action-card">
         <div class="action-icon"><i class="fas fa-store"></i></div>
         <div class="action-title" id="platformTitle">پلتفرم حریر</div>
-        <button id="directEnterBtn" class="btn-gold"><i class="fas fa-arrow-right"></i> <span id="enterBtnText">ورود به بازار</span></button>
+        <button id="directEnterBtn" class="btn-orange"><i class="fas fa-arrow-right"></i> <span id="enterBtnText">ورود به بازار</span></button>
         <div class="action-note" id="platformNote">ضمانت بازگشت کالا • پرداخت امن</div>
       </div>
 
       <div class="action-card">
         <div class="action-icon"><i class="fab fa-whatsapp"></i></div>
         <div class="action-title" id="groupTitle">گروه حریر</div>
-        <button id="whatsappGroupBtn" class="btn-gold"><i class="fab fa-whatsapp"></i> <span id="groupBtnText">ورود به گروه</span></button>
+        <button id="whatsappGroupBtn" class="btn-orange"><i class="fab fa-whatsapp"></i> <span id="groupBtnText">ورود به گروه</span></button>
         <div class="action-note" id="groupNote">گفتگوی زنده • تخفیف‌های ویژه</div>
       </div>
     </div>
@@ -630,39 +591,32 @@
 
     <div class="info-message">
       <i class="fas fa-star-of-life"></i>
-      <span id="infoSpan">حریر: بزرگترین و لوکس‌ترین بازار آنلاین | تضمین کیفیت | ارسال به سراسر کشور | پشتیبانی ۲۴ ساعته</span>
+      <span id="infoSpan">حریر: لوکس‌ترین بازار نارنجی و سفید | تضمین کیفیت | ارسال به سراسر کشور</span>
     </div>
   </div>
 
   <div class="footer">
-    <span id="footerCopyright">✨ حریر مارکت | خرید آسان، فروش مطمئن | تجربه لوکس خرید آنلاین ✨</span>
+    <span id="footerCopyright">✨ حریر مارکت | خرید آسان، فروش مطمئن — تجربه لوکس ✨</span>
   </div>
 </div>
-
-<!-- Favicon & Meta -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/Wr2ksmX/file-000000006a7c71f49c4be3dd0bfcfb6a.png">
-<meta property="og:title" content="حریر | Harir">
-<meta property="og:description" content="لوکس‌ترین مارکت‌پلیس خرید و فروش">
-<meta property="og:image" content="https://i.ibb.co/Wr2ksmX/file-000000006a7c71f49c4be3dd0bfcfb6a.png">
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ once: true, duration: 600 });
-  
-  // زبان‌ها فقط برای پلتفرم و گروه واتساپ
+
   const langDict = {
     fa: {
-      tagline: '<i class="fas fa-infinity"></i> <span>لوکس‌ترین بازار خرید و فروش</span> <i class="fas fa-infinity"></i>',
+      tagline: '<i class="fas fa-infinity"></i> <span>بازار لوکس نارنجی و سفید</span> <i class="fas fa-infinity"></i>',
       mainGreeting: "به حریر خوش آمدید",
-      subGreeting: "خرید، فروش، معامله — امنیت، کیفیت، اعتماد، لوکس",
+      subGreeting: "خرید، فروش — امنیت، کیفیت، اعتماد",
       platformTitle: "پلتفرم حریر",
       enterBtnText: "ورود به بازار",
       platformNote: "ضمانت بازگشت کالا • پرداخت امن",
       groupTitle: "گروه حریر",
       groupBtnText: "ورود به گروه",
       groupNote: "گفتگوی زنده • تخفیف‌های ویژه",
-      infoSpan: "حریر: بزرگترین و لوکس‌ترین بازار آنلاین | تضمین کیفیت | ارسال به سراسر کشور | پشتیبانی ۲۴ ساعته",
-      footer: "✨ حریر مارکت | خرید آسان، فروش مطمئن | تجربه لوکس خرید آنلاین ✨",
+      infoSpan: "حریر: لوکس‌ترین بازار نارنجی و سفید | تضمین کیفیت | ارسال به سراسر کشور",
+      footer: "✨ حریر مارکت | خرید آسان، فروش مطمئن — تجربه لوکس ✨",
       offerText: "🎁 ارسال رایگان اولین خرید | تخفیف ویژه اعضای گروه واتساپ 🎁",
       categoriesLabel: "✨ دسته‌بندی‌های محبوب ✨",
       galleryLabel: "📸 گالری محصولات ویژه",
@@ -672,38 +626,38 @@
       statSupport: "پشتیبانی"
     },
     ps: {
-      tagline: '<i class="fas fa-infinity"></i> <span>د پیرود او پلور لوکس بازار</span> <i class="fas fa-infinity"></i>',
+      tagline: '<i class="fas fa-infinity"></i> <span>نارنجي او سپین مارکیٹ</span> <i class="fas fa-infinity"></i>',
       mainGreeting: "حریر ته ښه راغلاست",
-      subGreeting: "پیرود، پلور، معامله — امنیت، کیفیت، باور، لوکس",
+      subGreeting: "پیرود، پلور — امنیت، کیفیت، باور",
       platformTitle: "حریر پلیټ فارم",
       enterBtnText: "بازار ته ننوځئ",
       platformNote: "د توکو بیرته راستنیدو تضمین • خوندي تادیه",
       groupTitle: "د حریر ګروپ",
       groupBtnText: "ګروپ ته ننوځئ",
       groupNote: "ژوندۍ خبرې • ځانګړي تخفیفونه",
-      infoSpan: "حریر: لوی آنلاین لوکس مارکیټ | د کیفیت تضمین | ټول هېواد ته لیږد | ۲۴ ساعته ملاتړ",
-      footer: "✨ حریر مارکیټ | اسانه پیرود، باوري پلور | آنلاین پیرود لوکس تجربه ✨",
-      offerText: "🎁 د لومړي پیرود لپاره وړیا لیږد | د ګروپ غړو لپاره ځانګړي تخفیفونه 🎁",
+      infoSpan: "حریر: تر ټولو لوکس نارنجي او سپین مارکیټ | کیفیت تضمین | ټول هېواد ته لیږد",
+      footer: "✨ حریر مارکیټ | اسانه پیرود، باوري پلور ✨",
+      offerText: "🎁 د لومړي پیرود لپاره وړیا لیږد | د ګروپ غړو لپاره تخفیفونه 🎁",
       categoriesLabel: "✨ مشهور کټګورۍ ✨",
-      galleryLabel: "📸 د ځانګړو محصولاتو ګالری",
+      galleryLabel: "📸 د محصولاتو ګالری",
       statUsers: "فعال کارونکی",
       statCities: "ښار",
       statProducts: "محصول",
       statSupport: "ملاتړ"
     },
     en: {
-      tagline: '<i class="fas fa-infinity"></i> <span>Luxury Marketplace</span> <i class="fas fa-infinity"></i>',
+      tagline: '<i class="fas fa-infinity"></i> <span>Orange & White Luxury Market</span> <i class="fas fa-infinity"></i>',
       mainGreeting: "Welcome to Harir",
-      subGreeting: "Buy, Sell, Trade — Security, Quality, Trust, Luxury",
+      subGreeting: "Buy, Sell — Security, Quality, Trust",
       platformTitle: "Harir Platform",
       enterBtnText: "Enter Market",
       platformNote: "Money-back Guarantee • Secure Payment",
       groupTitle: "Harir Group",
       groupBtnText: "Join Group",
       groupNote: "Live chat • Exclusive discounts",
-      infoSpan: "Harir: Largest & Luxury online marketplace | Quality guarantee | Nationwide shipping | 24/7 Support",
-      footer: "✨ Harir Market | Easy buying, trusted selling | Luxury online shopping experience ✨",
-      offerText: "🎁 Free shipping on first purchase | Special group discount 🎁",
+      infoSpan: "Harir: Orange & White Luxury Marketplace | Quality Guarantee | Nationwide Shipping",
+      footer: "✨ Harir Market | Easy buying, trusted selling ✨",
+      offerText: "🎁 Free shipping on first purchase | Special WhatsApp group discount 🎁",
       categoriesLabel: "✨ Popular Categories ✨",
       galleryLabel: "📸 Special Products Gallery",
       statUsers: "Active Users",
@@ -712,13 +666,13 @@
       statSupport: "Support"
     }
   };
-  
+
   let currentLang = 'fa';
   let isNightMode = false;
-  
+
   const PLATFORM_LINK = "https://app-amxnw7dzod8h.appmedo.com/";
   const WHATSAPP_LINK = "https://chat.whatsapp.com/JFdc1kdRRpdGO6lj3mO6r4";
-  
+
   const categories = [
     { icon: "fas fa-mobile-alt", name: { fa: "موبایل", ps: "ګرځنده", en: "Mobile" } },
     { icon: "fas fa-tshirt", name: { fa: "پوشاک", ps: "جامې", en: "Fashion" } },
@@ -727,7 +681,7 @@
     { icon: "fas fa-car", name: { fa: "خودرو", ps: "موټر", en: "Car" } },
     { icon: "fas fa-gem", name: { fa: "جواهرات", ps: "ګاڼې", en: "Jewelry" } }
   ];
-  
+
   function renderCategories() {
     const container = document.getElementById('categoryGrid');
     if(!container) return;
@@ -740,7 +694,7 @@
       container.appendChild(chip);
     });
   }
-  
+
   function updateUI() {
     const dict = langDict[currentLang];
     if(!dict) return;
@@ -762,25 +716,26 @@
     document.getElementById('statCities').innerText = dict.statCities;
     document.getElementById('statProducts').innerText = dict.statProducts;
     document.getElementById('statSupport').innerText = dict.statSupport;
-    
+
     renderCategories();
-    
+
     const body = document.body;
     if(currentLang === 'fa' || currentLang === 'ps') body.setAttribute('dir', 'rtl');
     else body.setAttribute('dir', 'ltr');
-    
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
       if(btn.getAttribute('data-lang') === currentLang) btn.classList.add('active');
       else btn.classList.remove('active');
     });
-    
+
+    const themeTextSpan = document.getElementById('themeText');
     if(isNightMode) {
-      document.getElementById('themeText').innerText = (currentLang === 'fa' ? 'روز' : (currentLang === 'ps' ? 'ورځ' : 'Day'));
+      themeTextSpan.innerText = (currentLang === 'fa' ? 'روز' : (currentLang === 'ps' ? 'ورځ' : 'Day'));
     } else {
-      document.getElementById('themeText').innerText = (currentLang === 'fa' ? 'شب' : (currentLang === 'ps' ? 'شپه' : 'Night'));
+      themeTextSpan.innerText = (currentLang === 'fa' ? 'شب' : (currentLang === 'ps' ? 'شپه' : 'Night'));
     }
   }
-  
+
   function toggleTheme() {
     isNightMode = !isNightMode;
     if(isNightMode) {
@@ -793,22 +748,22 @@
       document.getElementById('themeToggleBtn').innerHTML = '<i class="fas fa-moon"></i> <span>' + document.getElementById('themeText').innerText + '</span>';
     }
   }
-  
+
   function goToPlatform() {
     Swal.fire({ title: 'ورود به بازار حریر', timer: 1000, showConfirmButton: false, icon: 'success' });
     setTimeout(() => { window.location.href = PLATFORM_LINK; }, 800);
   }
-  
+
   function goToWhatsapp() {
     window.open(WHATSAPP_LINK, '_blank');
   }
-  
+
   document.getElementById('directEnterBtn').addEventListener('click', goToPlatform);
   document.getElementById('whatsappGroupBtn').addEventListener('click', goToWhatsapp);
   document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
-  
+
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       const lang = btn.getAttribute('data-lang');
       if(lang && lang !== currentLang) {
         currentLang = lang;
@@ -816,7 +771,7 @@
       }
     });
   });
-  
+
   updateUI();
 </script>
 </body>
